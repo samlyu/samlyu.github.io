@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Electromagnetic Field: Magnetostatics | Samuel Lyu&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="electromagnetic-field" />
+    
+    <meta name="description" content="We have already learned something about electrostatics last times. Now we turn to focus on magnetostatics.
+In history, for some reasons, although magnets and magnetism were known earlier, the study o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Electromagnetic Field: Magnetostatics">
+<meta property="og:url" content="http://samlyu.github.io/2016/03/06/Electromagnetic-Field-Magnetostatics/index.html">
+<meta property="og:site_name" content="Samuel Lyu's Blog">
+<meta property="og:description" content="We have already learned something about electrostatics last times. Now we turn to focus on magnetostatics.
+In history, for some reasons, although magnets and magnetism were known earlier, the study o">
+<meta property="og:image" content="http://samlyu.github.io/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png">
+<meta property="og:updated_time" content="2016-08-03T05:19:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Electromagnetic Field: Magnetostatics">
+<meta name="twitter:description" content="We have already learned something about electrostatics last times. Now we turn to focus on magnetostatics.
+In history, for some reasons, although magnets and magnetism were known earlier, the study o">
+<meta name="twitter:image" content="http://samlyu.github.io/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Notes and Scribbles</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About/">About</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/">EECS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/Theories/">Theories</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/EECS/Theories/">Theories</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Electromagnetic-Field-Magnetostatics" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Electromagnetic Field: Magnetostatics
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="article-date">
+    <time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electromagnetic-field/">electromagnetic-field</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png" alt=""></p>
+<p>We have already learned something about <a href="http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/"><strong>electrostatics</strong></a> last times. Now we turn to focus on <a href="https://en.wikipedia.org/wiki/Magnetostatics" target="_blank" rel="external"><strong>magnetostatics</strong></a>.</p>
+<p>In history, for some reasons, although magnets and magnetism were known earlier, the study of magnetism was not going smoothly. Sometimes it was almost just analogy.</p>
+<p>First we also have a <a href="https://en.wikipedia.org/wiki/Coulomb%27s_law" target="_blank" rel="external"><strong>Coulomb’s law</strong></a>:$$|\vec{F}|=\frac{q_1 q_2}{4\pi\mu_0 r^2}$$</p>
+<p>Exactly the same equation we have in electrostatics, the differences are: <a href="https://en.wikipedia.org/wiki/Vacuum_permittivity" target="_blank" rel="external"><strong>vacuum permittivity</strong></a> is replaced by <a href="https://en.wikipedia.org/wiki/Vacuum_permeability" target="_blank" rel="external"><strong>vacuum permeability</strong></a>, and the charges are no longer electric charges but “magnetic charges” or “magnetic poles”, aka <a href="https://en.wikipedia.org/wiki/Magnetic_monopole" target="_blank" rel="external"><strong>magnetic monopoles</strong></a>. Later in 1824, <a href="https://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" target="_blank" rel="external"><strong>Siméon Denis Poisson</strong></a> created the first successful model of the magnetic field. In this model, a magnetic $\vec{H}$-field is produced by ‘magnetic poles’ and magnetism is due to small pairs of north/south magnetic poles. $\vec{H}$ is <strong>magnetic field strength</strong>. We also have the following equation: $$\vec{B}=\mu_0(\vec{H}+\vec{M})$$</p>
+<p>$\vec{B}$ is called <strong>magnetic field strength</strong>, $\vec{M}$ is called <strong>magnetization intensity</strong>. Just like  polarization, here we have <a href="https://en.wikipedia.org/wiki/Magnetization" target="_blank" rel="external"><strong>magnetization</strong></a>. Also, if the medium is <strong>linear</strong> and <strong>isotropic</strong>:<br><span>$$\begin{aligned}
+\vec{B}=\mu_0(\vec{H}+\chi_m\vec{H})=\mu_0 \mu_r \vec{H}=\mu \vec{H}
+\end{aligned}$$</span><!-- Has MathJax --><br>If we take a look back:<br><span>$$\begin{aligned}
+\vec{D}=(1+\chi)\varepsilon_0\vec{E}=\varepsilon_r\varepsilon_0 \vec{E}=\varepsilon \vec{E}
+\end{aligned}$$</span><!-- Has MathJax --><br>They are <strong>TOTALLY</strong> the same.</p>
+<p><strong>HOWEVER</strong>, those theories are all based on “magnetic poles”. <strong>Are they really exist?</strong> In 1785, <a href="https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb" target="_blank" rel="external"><strong>Charles-Augustin de Coulomb</strong></a> himself experimentally verified this and stated explicitly that the north and south poles cannot be separated. So what really produces magnetic force?</p>
+<p><img src="/images/2016-03-06-Electromagnetic-Field-Magnetostatics/cannotseparate.png" alt=""></p>
+<p>Three discoveries challenged this foundation of magnetism. First, in 1819, <a href="https://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted" target="_blank" rel="external"><strong>Hans Christian Ørsted</strong></a> discovered that <strong>an electric current generates a magnetic field encircling it</strong>. Then in 1820, <a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re" target="_blank" rel="external"><strong>André-Marie Ampère</strong></a> showed that <strong>parallel wires having currents</strong> in the same direction attract one another. Finally, <a href="https://en.wikipedia.org/wiki/Jean-Baptiste_Biot" target="_blank" rel="external"><strong>Jean-Baptiste Biot</strong></a> and <a href="https://en.wikipedia.org/wiki/F%C3%A9lix_Savart" target="_blank" rel="external"><strong>Félix Savart</strong></a> discovered the <a href="https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law" target="_blank" rel="external"><strong>Biot–Savart law</strong></a> in 1820, which correctly predicts the magnetic field around any current-carrying wire.</p>
+<p>Extending these experiments, Ampère published his own successful model of magnetism in 1825. In it, he showed the equivalence of electrical currents to magnets and proposed that magnetism is due to <strong>perpetually flowing loops of current</strong> instead of the <strong>dipoles of magnetic charge</strong> in Poisson’s model. This has the additional benefit of explaining <strong>why magnetic charge can not be isolated</strong>. Further, Ampère derived both <a href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_force_law" target="_blank" rel="external"><strong>Ampère’s force law</strong></a> describing the force between two currents and <a href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law" target="_blank" rel="external"><strong>Ampère’s law</strong></a>, which, like the Biot–Savart law, correctly described the magnetic field generated by a <strong>steady current</strong>. Also in this work, Ampère introduced the term <a href="https://en.wikipedia.org/wiki/Classical_electromagnetism" target="_blank" rel="external"><strong>electrodynamics</strong></a> to describe the relationship between electricity and magnetism.</p>
+<p><img src="/images/2016-03-06-Electromagnetic-Field-Magnetostatics/ampere.png" alt=""></p>
+<p>From our modern perspectives, <strong>unified theory</strong> is still fashionable. Ampère made a big step toward it.</p>
+<h4 id="a-Biot–Savart-Law"><a href="#a-Biot–Savart-Law" class="headerlink" title="a). Biot–Savart Law"></a>a). Biot–Savart Law</h4><p>In a vacuum:<br><span>$$\begin{aligned}
+\vec{B}=\int d\vec{B}=\frac{\mu_0}{4\pi}\int_{l&apos;}\frac{I&apos;dl&apos;\times(\vec{r}-\vec{r&apos;})}{|\vec{r}-\vec{r&apos;}|^3}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="b-Ampere’s-Circuital-Law"><a href="#b-Ampere’s-Circuital-Law" class="headerlink" title="b). Ampère’s Circuital Law"></a>b). Ampère’s Circuital Law</h4><p>In a vacuum:<br><span>$$\begin{aligned}
+\oint\vec{B} \cdot d\vec{l}=\mu_0\sum I
+\end{aligned}$$</span><!-- Has MathJax --><br>The direction of the current is related to the direction of the $\vec{B}$ circle, by using the <a href="https://en.wikipedia.org/wiki/Right-hand_rule" target="_blank" rel="external"><strong>right hand rule</strong></a>.</p>
+<p>In other mediums, we have to take <a href="https://en.wikipedia.org/wiki/Magnetization" target="_blank" rel="external"><strong>magnetization</strong></a> into account:<br><span>$$\begin{aligned}
+\oint\vec{H}\cdot d\vec{l}=I
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>The relationship of $\vec{B}$, $\vec{H}$, and $\vec{M}$ is correct, but we’d like to write it in a different form:<br><span>$$\begin{aligned}
+\vec{H}=\frac{\vec{B}}{\mu_0}-\vec{M}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="c-Fundamental-Equations"><a href="#c-Fundamental-Equations" class="headerlink" title="c). Fundamental Equations"></a>c). Fundamental Equations</h4><p>Integral form:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{B} \cdot d\vec{S}=0\\
+&amp;\oint \vec{H} \cdot d\vec{l}=I\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Differential form:<br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla \cdot \vec{B}=0\\
+&amp;\nabla \times \vec{H}=\vec{J}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Now we know that static magnetic fields are <strong>rotational</strong>, and <strong>divergence-free</strong>.</p>
+<h4 id="d-Magnetic-Potential"><a href="#d-Magnetic-Potential" class="headerlink" title="d). Magnetic Potential"></a>d). Magnetic Potential</h4><p>Now we are going to define <a href="https://en.wikipedia.org/wiki/Magnetic_potential" target="_blank" rel="external"><strong>magnetic potential</strong></a> to measure the rotation of a static magnetic field, just like what we did in electric potential.<br>$$\vec{B}=\nabla\times\vec{A}$$<br>$$\Psi=\int_S \vec{B} \cdot d\vec{S}=\int_S (\nabla \times \vec{A})\cdot d\ vec{S}=\oint_L \vec{A}\cdot d\vec{l}$$<br>This is not enough, we also want to define <a href="https://en.wikipedia.org/wiki/Magnetic_potential" target="_blank" rel="external"><strong>magnetic scholar potential</strong></a> by analogy.<br>$$\vec{H}=-\nabla \varphi_m$$</p>
+<h4 id="e-Boundary-Conditions"><a href="#e-Boundary-Conditions" class="headerlink" title="e). Boundary Conditions"></a>e). Boundary Conditions</h4><p>Near to the boundary line of two static electric fields:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{B}_{2n}=\vec{B}_{1n}\\
+&amp;\vec{H}_{1t}-\vec{H}_{2t}=\vec{K}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>$\vec{K}$ is the <strong>linear current density</strong>.<br>Represented with magnetic potential, if the field is <strong>axisymmetric</strong>:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{A_1}=\vec{A_2}\\
+&amp;\frac{1}{\mu_1}\frac{\partial \vec{A_1}}{\partial n}-\frac{1}{\mu_2}\frac{\partial \vec{A_2}}{\partial n}=\vec{K}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Represented with magnetic scholar potential:<br><span>$$\left\{
+\begin{aligned}
+&amp;\varphi_{m1}=\varphi_{m2}\\
+&amp;\mu_1 \frac{\partial \varphi_{m1}}{\partial n}=\mu_2 \frac{\partial \varphi_{m2}}{\partial n}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h4 id="f-Basic-Questions"><a href="#f-Basic-Questions" class="headerlink" title="f). Basic Questions"></a>f). Basic Questions</h4><p>Almost the same in electrostatics.<br>How can we know the <strong>effect</strong> of a field if we already knew something about the source? How can we know something about a <strong>source</strong> if we already knew the effect of the field it excited?<br>Answers:</p>
+<ol>
+<li>Biot–Savart law ( for continuous objects ).</li>
+<li>Ampère’s circuital law ( for electric wires ).</li>
+<li>Boundary conditions, along with <strong>Poisson’s equation</strong>: $\nabla^2\cdot\vec{A}=-\mu\vec{J}$, or <strong>Laplace’s equation</strong>: $\nabla^2\varphi_m=0$ in vector form ( in a <a href="https://en.wikipedia.org/wiki/Force-free_magnetic_field" target="_blank" rel="external"><strong>force-free magnetic field</strong></a> ).</li>
+<li><a href="https://en.wikipedia.org/wiki/Method_of_images" target="_blank" rel="external"><strong>Method of images</strong></a> ( for different mediums ).<h4 id="g-Energy"><a href="#g-Energy" class="headerlink" title="g). Energy"></a>g). Energy</h4>Self inductance: $\Psi=LI$</li>
+</ol>
+<p>Mutual inductance: $\Psi=MI$</p>
+<p>For coils:<br><span>$$\begin{aligned}
+W_m=\frac{1}{2}\sum_{i=1}^{n} I_i \Psi_i
+\end{aligned}$$</span><!-- Has MathJax --><br>For magnetic bodies: $$W_m=\frac{1}{2}\int_V \vec{H}\cdot\vec{B}dV$$</p>
+<p><strong>That’s all.</strong></p>
+<p><strong>HOWEVER…</strong> what if magnetic monopole does exist and someone finds it out?</p>
+<p><img src="/assets/2016-03-06-Electromagnetic-Field-Magnetostatics/TBBTS03E01clip.JPG" alt="The Big Bang Theory, S03E01"></p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Liu,Wenkai. <em>Electromagnetic Fields and Electromagnetic Waves</em>. [M]. Beijing: BUPT Press, 2013.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-03-06.</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://samlyu.github.io/2016/03/06/Electromagnetic-Field-Magnetostatics/" data-id="ciren0j84000g542eyzvvf6xj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow me on:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/ShengweiLv" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/samlyu" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/shengweilyu" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Electromagnetic Field: Maxwell&#39;s Equations
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Electromagnetic Field: Electrostatics</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-07-08-P-N-Junction-Semiconductor-Devices/pnjunction.png)" alt="P-N Junction &amp; Semiconductor Devices" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="title">P-N Junction &amp; Semiconductor Devices</a></p>
+                            <p class="item-date"><time datetime="2016-07-13T16:00:00.000Z" itemprop="datePublished">2016-07-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/emf%2001.jpg)" alt="Electromagnetic Field: Maxwell&#39;s Equations" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="title">Electromagnetic Field: Maxwell&#39;s Equations</a></p>
+                            <p class="item-date"><time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished">2016-03-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png)" alt="Electromagnetic Field: Magnetostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="title">Electromagnetic Field: Magnetostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png)" alt="Electromagnetic Field: Electrostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="title">Electromagnetic Field: Electrostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/vectorfield.jpg)" alt="Electromagnetic Field: Vector Analysis" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="title">Electromagnetic Field: Vector Analysis</a></p>
+                            <p class="item-date"><time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/">EECS</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/Theories/">Theories</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analog-electronics/">analog-electronics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/circuit-analysis/">circuit-analysis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electromagnetic-field/">electromagnetic-field</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miscellaneous/">miscellaneous</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Lyu</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a> & <a href="//atom.io/" target="_blank">Atom</a>. Theme by <a href="//github.com/ppoffice" target="_blank">Ruipeng Zhang</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

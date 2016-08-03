@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Electromagnetic Field: Electrostatics | Samuel Lyu&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="electromagnetic-field" />
+    
+    <meta name="description" content="What are we trying to figure out when we talk about a force field?
+
+What are the force lines look like? Diverging or twisting? How can we measure them?
+What would happen if two fields connected toget">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Electromagnetic Field: Electrostatics">
+<meta property="og:url" content="http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/index.html">
+<meta property="og:site_name" content="Samuel Lyu's Blog">
+<meta property="og:description" content="What are we trying to figure out when we talk about a force field?
+
+What are the force lines look like? Diverging or twisting? How can we measure them?
+What would happen if two fields connected toget">
+<meta property="og:image" content="http://samlyu.github.io/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png">
+<meta property="og:updated_time" content="2016-08-03T05:19:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Electromagnetic Field: Electrostatics">
+<meta name="twitter:description" content="What are we trying to figure out when we talk about a force field?
+
+What are the force lines look like? Diverging or twisting? How can we measure them?
+What would happen if two fields connected toget">
+<meta name="twitter:image" content="http://samlyu.github.io/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Notes and Scribbles</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About/">About</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/">EECS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/Theories/">Theories</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/EECS/Theories/">Theories</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Electromagnetic-Field-Electrostatics" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Electromagnetic Field: Electrostatics
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="article-date">
+    <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electromagnetic-field/">electromagnetic-field</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png" alt=""></p>
+<p>What are we trying to figure out when we talk about a force field?</p>
+<ol>
+<li>What are the force lines <strong>look like</strong>? Diverging or twisting? How can we <strong>measure</strong> them?</li>
+<li>What would happen if two fields <strong>connected together</strong>?</li>
+<li>How can we know the <strong>effect</strong> of a field if we already knew something about the source? How can we know something about a <strong>source</strong> if we already knew the effect of the field it excited?</li>
+<li>How about the <strong>energy</strong> or something else?</li>
+</ol>
+<p>By solving the above questions no.1 we can get some fundamental equations of the field. Questions no.3 are the basic problems that we need some solutions and questions no.1 and no.2 are of help. As for question no.4, that’s something matters in practical applications.</p>
+<p>We can do those with our <a href="http://samlyu.github.io/2016/02/04/Electromagnetic-Field-Vector-Analysis/"><strong>mathematical tools</strong></a>. However, every physics issue has to be started with some experiments. How much is the <strong>force</strong>? That is question no.0.</p>
+<p>Now that I cannot demonstrate all the laws and formulas myself, I am going to list some pioneer scientists’ discoveries of three kinds of basic static electromagnetic fields below, and two of them are parts of <a href="https://en.wikipedia.org/wiki/Electrostatics" target="_blank" rel="external"><strong>electrostatics</strong></a>. What I can fully understand is that, these formulas are of simplicity and elegance undoubtedly.</p>
+<h2 id="1-Static-Electric-field"><a href="#1-Static-Electric-field" class="headerlink" title="1. Static Electric field"></a>1. Static Electric field</h2><p>The static electric field is produced by <strong>stationary charges</strong>, positive ones or negative ones.</p>
+<h4 id="a-Coulomb’s-Law"><a href="#a-Coulomb’s-Law" class="headerlink" title="a). Coulomb’s Law"></a>a). Coulomb’s Law</h4><p>First published by <a href="https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb" target="_blank" rel="external"><strong>Charles Augustin de Coulomb</strong></a> in 1784.<br><span>$$\begin{aligned}
+\vec{F_{1\to 2}}=\frac{q_{1}q_{2}}{4\pi \varepsilon_{0} |\vec{r_{2}}-\vec{r_{1}}|^2}\hat{e_{12}}=\frac{q_1 q_2(\vec{r_2}-\vec{r_1})}{4\pi \varepsilon_0 |\vec{r_2}-\vec{r_1}|^3}\\
+\vec{F_{2\to 1}}=\frac{q_{1}q_{2}}{4\pi \varepsilon_{0} |\vec{r_{1}}-\vec{r_{2}}|^2}\hat{e_{21}}=\frac{q_1 q_2(\vec{r_1}-\vec{r_2})}{4\pi \varepsilon_0 |\vec{r_1}-\vec{r_2}|^3}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="b-Electric-Field-Intensity-vec-E"><a href="#b-Electric-Field-Intensity-vec-E" class="headerlink" title="b). Electric Field Intensity ( $\vec{E}$ )"></a>b). Electric Field Intensity ( $\vec{E}$ )</h4><p>The electric field $\vec{E}$ at a given point is defined as the (vectorial) force $\vec{F}$ that would be exerted on a stationary <a href="https://en.wikipedia.org/wiki/Test_particle" target="_blank" rel="external"><strong>test particle</strong></a> of unit charge by electromagnetic forces ( i.e. the Lorentz force ). A particle of charge q would be subject to a force: $$\vec{F}=q\cdot\vec{E}$$</p>
+<h4 id="c-Fundamental-Equations"><a href="#c-Fundamental-Equations" class="headerlink" title="c). Fundamental Equations"></a>c). Fundamental Equations</h4><p>By using the mathematical tools we obtained last time ( flux, circulation, divergence, curl ), we are able to get some fundamental equations of static electric field: <a href="https://en.wikipedia.org/wiki/Gauss%27s_law" target="_blank" rel="external"><strong>Gauss’s flux theorem</strong></a> and <strong>circuital theorem of static electric field</strong>, in both integral form and differential form.<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{E}\cdot d\vec{S}=\frac{Q}{\varepsilon_0}\\
+&amp;\oint_L \vec{E}\cdot d\vec{l}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}\\
+&amp;\nabla\times\vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<p><strong>However</strong>, because of <a href="https://en.wikipedia.org/wiki/Polarization" target="_blank" rel="external"><strong>polarization</strong></a>, those above formulas can only be used in a <strong>vacuum</strong>, where has a simple <a href="https://en.wikipedia.org/wiki/Permittivity" target="_blank" rel="external"><strong>permittivity</strong></a>: $\varepsilon_0$.</p>
+<p>We have to take <a href="https://en.wikipedia.org/wiki/Polarization_density" target="_blank" rel="external"><strong>polarization density</strong></a> $\vec{P}$ into account. We define <a href="https://en.wikipedia.org/wiki/Electric_displacement_field" target="_blank" rel="external"><strong>electric displacement</strong></a> $\vec{D}$ as:<br>$$\vec{D}=\varepsilon_0 \vec{E} + \vec{P}$$<br>( As for why it is called “displacement”, we will talk about it next time. )<br>If the <strong>medium</strong> is not only <strong>linear</strong> but also <strong>isotropic</strong>:<br>$$\vec{P}=\chi \varepsilon_0 \vec{E}$$<br>$$\vec{D}=(1+\chi)\varepsilon_0\vec{E}=\varepsilon_r\varepsilon_0 \vec{E}=\varepsilon \vec{E}$$<br>So here are the fundamental equations (final version):<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{D}\cdot d\vec{S}=\int_V \rho_f dV=Q_f\\
+&amp;\oint_L \vec{E}\cdot d\vec{l}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla\cdot\vec{D}=\rho_f\\
+&amp;\nabla\times\vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<p>Now we have already known about the force and what the force lines look like: The static electric field is an <strong>irrotational field</strong>.</p>
+<h4 id="d-Electric-Potential"><a href="#d-Electric-Potential" class="headerlink" title="d). Electric Potential"></a>d). Electric Potential</h4><p>Since the curl of a static electric field equals to zero, we can define a variable to measure the divergence of the field. Imagine a <strong>waterfall</strong>, we now know the velocity of the water, how can we get the height of each point in this “waterfall field”? BTW, we want the height of ground remain zero.<br>$$\vec{E}=-\nabla\varphi$$</p>
+<h4 id="e-Boundary-Conditions"><a href="#e-Boundary-Conditions" class="headerlink" title="e). Boundary Conditions"></a>e). Boundary Conditions</h4><p>Near to the boundary line of two static electric fields:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{E}_{1t}=\vec{E}_{2t}\\
+&amp;\vec{D}_{2n}-\vec{D}_{1n}=\sigma_f\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Represented with electric potential:<br><span>$$\left\{
+\begin{aligned}
+&amp;\varphi_1=\varphi_2\\
+&amp;\varepsilon_2\frac{\partial\varphi_2}{\partial n}-\varepsilon_1\frac{\partial\varphi_1}{\partial n}=-\sigma_f\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>If both of the mediums are linear and isotropic, here we have the law of reflection:<br>$$\frac{tan\alpha_1}{tan\alpha_2}=\frac{\varepsilon_1}{\varepsilon_2}$$</p>
+<h4 id="f-Basic-Questions"><a href="#f-Basic-Questions" class="headerlink" title="f). Basic Questions"></a>f). Basic Questions</h4><p>How can we know the <strong>effect</strong> of a field if we already knew something about the source? How can we know something about a <strong>source</strong> if we already knew the effect of the field it excited?<br>Answers:</p>
+<ol>
+<li>Coulomb’s law and $\vec{E}$.</li>
+<li>Coulomb’s law and $\vec{E}$ and integration ( for continuous objects ).</li>
+<li>Gauss’s flux theorem ( for symmetrical objects ).</li>
+<li>Boundary conditions, along with <a href="https://en.wikipedia.org/wiki/Poisson%27s_equation" target="_blank" rel="external"><strong>Poisson’s equation</strong></a>: $\nabla^2\varphi=-\frac{\rho_f}{\varepsilon}$, or <a href="https://en.wikipedia.org/wiki/Laplace%27s_equation" target="_blank" rel="external"><strong>Laplace’s equation</strong></a>: $\nabla^2\varphi=0$.</li>
+<li><a href="https://en.wikipedia.org/wiki/Method_of_image_charges" target="_blank" rel="external"><strong>Method of image charges</strong></a> ( for different mediums ).</li>
+</ol>
+<h4 id="g-Energy"><a href="#g-Energy" class="headerlink" title="g). Energy"></a>g). Energy</h4><p>Separated charges:<br><span>$$\begin{aligned}
+&amp;W=\frac{1}{2}\sum^{n}_{i=1} q_i \varphi_i\\
+&amp;\varphi_i=\sum^{n}_{j=1,j\neq i}\varphi_{ij}\\
+\end{aligned}$$</span><!-- Has MathJax --><br>Continuous charged body:<br>$$W=\frac{1}{2}\int_V \rho\varphi dV=\frac{1}{2}\int_V \vec{D}\cdot\vec{E}dV$$</p>
+<h2 id="2-Steady-Electric-Field"><a href="#2-Steady-Electric-Field" class="headerlink" title="2. Steady Electric Field"></a>2. Steady Electric Field</h2><p>We now know what would happen if we have some stationary charges. Next, we want to make them move, say, in a circuit. Although they are moving, the distribution of the charges is invariable. In that situation, we get a steady electric field.</p>
+<p><img src="/images/2016-03-03-Electromagnetic-Field-Electrostatics/current1.png" alt=""></p>
+<h4 id="a-Current-Density"><a href="#a-Current-Density" class="headerlink" title="a). Current Density"></a>a). Current Density</h4><p>We can no longer regard currents as constants now. <a href="https://en.wikipedia.org/wiki/Current_density" target="_blank" rel="external"><strong>Current density</strong></a> is defined as a <strong>vector</strong> whose magnitude is the electric current <strong>per cross-sectional area</strong> at a given point in space.<br><span>$$\begin{aligned}
+&amp;\vec{J}=\rho \vec{\nu}\\
+&amp;I=\int_S \vec{J}\cdot d\vec{S}\\
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="b-Ohm’s-Law-Differential-Form"><a href="#b-Ohm’s-Law-Differential-Form" class="headerlink" title="b). Ohm’s Law: Differential Form"></a>b). Ohm’s Law: Differential Form</h4><p>If the medium is linear and isotropic:<br><span>$$\begin{aligned}
+\vec{J}=\gamma\vec{E}
+\end{aligned}$$</span><!-- Has MathJax --><br>$\gamma$ is the <a href="https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity" target="_blank" rel="external"><strong>electrical conductivity</strong></a> of the medium.</p>
+<h4 id="c-KCL-Integral-amp-Differential-Form"><a href="#c-KCL-Integral-amp-Differential-Form" class="headerlink" title="c). KCL: Integral &amp; Differential Form"></a>c). KCL: Integral &amp; Differential Form</h4><p>We have already learned that the quantity of electric charges is conserved. Let’s consider a section of a electric wire. The current discharging from the section should equals to the decrement rate of charges.<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{J}\cdot d\vec{S}=-\int_V \frac{\partial\rho}{\partial t}dV\\
+&amp;\nabla \cdot \vec{J}=-\frac{\partial\rho}{\partial t}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>The above equations are appropriate for any electric field. As for steady electric field, the equations become:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{J}\cdot d\vec{S}=0\\
+&amp;\nabla \cdot \vec{J}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h4 id="d-Fundamental-Equations"><a href="#d-Fundamental-Equations" class="headerlink" title="d). Fundamental Equations"></a>d). Fundamental Equations</h4><p>Steady electric fields are not only <strong>irrotational</strong>, but also <strong>divergence-free</strong>.<br>Integral form:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{J}\cdot d\vec{S}=0\\
+&amp;\oint_l \vec{E}\cdot d\vec{l}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Differential form:<br><span>$$\left\{
+\begin{aligned}
+\nabla \cdot \vec{J}=0\\
+\nabla \times \vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h4 id="e-Boundary-Conditions-1"><a href="#e-Boundary-Conditions-1" class="headerlink" title="e). Boundary Conditions"></a>e). Boundary Conditions</h4><p>Near to the boundary line of two steady electric fields:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{E}_{1t}=\vec{E}_{2t}\\
+&amp;\vec{J}_{1n}=\vec{J}_{2n}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Represented with electric potential:<br><span>$$\left\{
+\begin{aligned}
+&amp;\varphi_1=\varphi_2\\
+&amp;\gamma_1\frac{\partial\varphi_1}{\partial n}=\gamma_2\frac{\partial\varphi_2}{\partial n}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>If both of the mediums are linear and isotropic, here we have the law of reflection:<br>$$\frac{tan\alpha_1}{tan\alpha_2}=\frac{\gamma_1}{\gamma_2}$$</p>
+<p><strong>That’s all…</strong> The calculations are quite exhausting. However, you can see the artistry.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Liu,Wenkai. <em>Electromagnetic Fields and Electromagnetic Waves</em>. [M]. Beijing: BUPT Press, 2013.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-03-05.</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/" data-id="ciren0j710005542en36nnzlf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow me on:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/ShengweiLv" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/samlyu" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/shengweilyu" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Electromagnetic Field: Magnetostatics
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Electromagnetic Field: Vector Analysis</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-07-08-P-N-Junction-Semiconductor-Devices/pnjunction.png)" alt="P-N Junction &amp; Semiconductor Devices" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="title">P-N Junction &amp; Semiconductor Devices</a></p>
+                            <p class="item-date"><time datetime="2016-07-13T16:00:00.000Z" itemprop="datePublished">2016-07-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/emf%2001.jpg)" alt="Electromagnetic Field: Maxwell&#39;s Equations" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="title">Electromagnetic Field: Maxwell&#39;s Equations</a></p>
+                            <p class="item-date"><time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished">2016-03-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png)" alt="Electromagnetic Field: Magnetostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="title">Electromagnetic Field: Magnetostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png)" alt="Electromagnetic Field: Electrostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="title">Electromagnetic Field: Electrostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/vectorfield.jpg)" alt="Electromagnetic Field: Vector Analysis" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="title">Electromagnetic Field: Vector Analysis</a></p>
+                            <p class="item-date"><time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/">EECS</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/Theories/">Theories</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analog-electronics/">analog-electronics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/circuit-analysis/">circuit-analysis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electromagnetic-field/">electromagnetic-field</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miscellaneous/">miscellaneous</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Lyu</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a> & <a href="//atom.io/" target="_blank">Atom</a>. Theme by <a href="//github.com/ppoffice" target="_blank">Ruipeng Zhang</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

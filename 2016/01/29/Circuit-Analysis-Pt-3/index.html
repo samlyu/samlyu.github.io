@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Circuit Analysis Pt.3 | Samuel Lyu&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="circuit-analysis" />
+    
+    <meta name="description" content="We have already solve simple DC resistive circuit problems and sinusoidal AC circuit problems ( in Circuit Analysis Pt.1 &amp;amp;&amp;amp; Circuit Analysis Pt.2 ), now we need some ultimate mathematical tri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Circuit Analysis Pt.3">
+<meta property="og:url" content="http://samlyu.github.io/2016/01/29/Circuit-Analysis-Pt-3/index.html">
+<meta property="og:site_name" content="Samuel Lyu's Blog">
+<meta property="og:description" content="We have already solve simple DC resistive circuit problems and sinusoidal AC circuit problems ( in Circuit Analysis Pt.1 &amp;amp;&amp;amp; Circuit Analysis Pt.2 ), now we need some ultimate mathematical tri">
+<meta property="og:image" content="http://samlyu.github.io/images/2016-01-29-Circuit-Analysis-Pt-3/coverpic.png">
+<meta property="og:updated_time" content="2016-08-03T05:19:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Circuit Analysis Pt.3">
+<meta name="twitter:description" content="We have already solve simple DC resistive circuit problems and sinusoidal AC circuit problems ( in Circuit Analysis Pt.1 &amp;amp;&amp;amp; Circuit Analysis Pt.2 ), now we need some ultimate mathematical tri">
+<meta name="twitter:image" content="http://samlyu.github.io/images/2016-01-29-Circuit-Analysis-Pt-3/coverpic.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Notes and Scribbles</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About/">About</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/">EECS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/Theories/">Theories</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/EECS/Theories/">Theories</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Circuit-Analysis-Pt-3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Circuit Analysis Pt.3
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/01/29/Circuit-Analysis-Pt-3/" class="article-date">
+    <time datetime="2016-01-28T16:00:00.000Z" itemprop="datePublished">2016-01-29</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/circuit-analysis/">circuit-analysis</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/coverpic.png" alt=""></p>
+<p>We have already solve simple <strong>DC resistive circuit</strong> problems and <strong>sinusoidal AC circuit</strong> problems ( in <a href="http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/"><strong>Circuit Analysis Pt.1</strong></a> &amp;&amp; <a href="http://samlyu.github.io/2016/01/28/Circuit-Analysis-Pt-2/"><strong>Circuit Analysis Pt.2</strong></a> ), now we need some ultimate mathematical tricks to solve all the circuit problems with <strong>periodic voltage sources</strong> and <strong>aperiodic voltage sources</strong>.</p>
+<h2 id="1-Fourier-Series"><a href="#1-Fourier-Series" class="headerlink" title="1. Fourier Series"></a>1. Fourier Series</h2><p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/Fourier.png" alt=""></p>
+<p>A <strong>Fourier series</strong> is a way to represent a wave-like function as the sum of simple sine waves. More formally, it decomposes any periodic function or periodic signal into the sum of a (possibly infinite) set of <strong>simple oscillating functions</strong>, namely sines and cosines (or, equivalently, complex exponentials). The Fourier series is named in honor of <a href="https://en.wikipedia.org/wiki/Joseph_Fourier" target="_blank" rel="external"><strong>Jean-Baptiste Joseph Fourier</strong></a> (1768–1830), who made important contributions to the study of <strong>trigonometric series</strong>, after preliminary investigations by <a href="https://en.wikipedia.org/wiki/Leonhard_Euler" target="_blank" rel="external"><strong>Leonhard Euler</strong></a>, <a href="https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert" target="_blank" rel="external"><strong>Jean le Rond d’Alembert</strong></a>, and <a href="https://en.wikipedia.org/wiki/Daniel_Bernoulli" target="_blank" rel="external"><strong>Daniel Bernoulli</strong></a>.</p>
+<p><strong>Definition:</strong><br><br><br>$f(x)$ is a continuous periodic function. $2l$ is its period length.<br><span>$$\begin{aligned}
+f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_{n} cos \frac{n \pi x}{l}+b_{n} sin \frac{n \pi x}{l})
+\end{aligned}$$</span><!-- Has MathJax --><br>Where:<br><span>$$\left\{
+\begin{aligned}
+a_{n}=\frac{1}{l}\int_{-l}^{l}f(x)cos \frac{n \pi x}{l} dx\\
+b_{n}=\frac{1}{l}\int_{-l}^{l}f(x)sin \frac{n \pi x}{l} dx\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Now we can use phasor method and <a href="https://en.wikipedia.org/wiki/Superposition_theorem" target="_blank" rel="external"><strong>superposition theorem</strong></a> to solve these circuit problems.</p>
+<h2 id="2-Laplace-Transform-The-Theorem"><a href="#2-Laplace-Transform-The-Theorem" class="headerlink" title="2. Laplace Transform - The Theorem"></a>2. Laplace Transform - The Theorem</h2><p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/Laplace.png" alt=""></p>
+<p><strong>Integral transform</strong>: In mathematics, an integral transform is any transform $T$ of the following form:<br><span>$$\begin{aligned}
+(Tf)(u)=\int_{t_1}^{t_2}K(t,u)f(t)dt
+\end{aligned}$$</span><!-- Has MathJax --><br>The input of this transform is a function $f$ of the independent variable $t$, and the output is another function $Tf$ of the independent variable $u$. An integral transform is a particular kind of mathematical <a href="https://en.wikipedia.org/wiki/Operator" target="_blank" rel="external"><strong>operator</strong></a>.</p>
+<p>Of course we also need an <strong>inverse transform</strong> to get the function back:<br><span>$$\begin{aligned}
+f(t)=\int_{u_1}^{u_2}K^{-1}(u,t)(Tf)(u)du
+\end{aligned}$$</span><!-- Has MathJax --><br>Actually, this started with J.Fourier. (why always him?)</p>
+<p>If you make $l\to +\infty$, the Fourier series becomes a integral form equation.<br><span>$$\begin{aligned}
+f(t)=\frac{1}{\pi}\int_{0}^{+\infty}d\omega \int_{-\infty}^{\infty}f(u)cos\omega(u-t)du
+\end{aligned}$$</span><!-- Has MathJax --><br>And according to <strong>Euler’s equation</strong>, we get <a href="https://en.wikipedia.org/wiki/Fourier_transform" target="_blank" rel="external"><strong>Fourier transform</strong></a>:<br><span>$$\begin{aligned}
+F(\omega)=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\\
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d\omega
+\end{aligned}$$</span><!-- Has MathJax --><br>However, this transform is not so good to be used:</p>
+<ol>
+<li>As for $f(t)$, we don’t care what happen when $t&lt;0_{-}$.</li>
+<li>As for $\omega$, it is actually the imaginary part of $j\omega$, so what we get from Fourier transform is actually a function of <strong>a pure imaginary variable</strong> but not a function of <strong>a complex variable</strong>, which is what we need in circuit analysis.</li>
+</ol>
+<p>In 1785, <a href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace" target="_blank" rel="external"><strong>P.Laplace</strong></a> got his transform: <a href="https://en.wikipedia.org/wiki/Laplace_transform" target="_blank" rel="external"><strong>Laplace transform</strong></a>. It takes a function of <strong>a positive real variable t (often time)</strong> to a function of <strong>a complex variable s (often frequency)</strong>. Actually this function is some kind of “improved edition” of Fourier transform. It specifically solved the 2 problems above.</p>
+<p><strong>Definition:</strong><br><span>$$\begin{aligned}
+F(s)=\int_{0}^{+\infty}f(t)e^{-st}dt\\
+f(t)=\frac{1}{2 \pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}F(s)e^{st}ds
+\end{aligned}$$</span><!-- Has MathJax --><br>Where:<br><span>$$\begin{aligned}
+s=\sigma+j\omega
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>Well, this time it is good enough… but how can we use it in solving circuit problems?</p>
+<p>Actually, not until more than 100 years later has someone thought of using this Laplace’s method in solving circuit problems. While when someone started using this way to do circuits, he couldn’t proof that it was correct because he simply found this method out of his intuition without knowing that Laplace had proved it for him more than 100 years ago. How pathetic they were!</p>
+<h2 id="3-Laplace-Transform-Heaviside’s-Contributions"><a href="#3-Laplace-Transform-Heaviside’s-Contributions" class="headerlink" title="3. Laplace Transform - Heaviside’s Contributions"></a>3. Laplace Transform - Heaviside’s Contributions</h2><p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/Heaviside.png" alt=""></p>
+<p><a href="https://en.wikipedia.org/wiki/Oliver_Heaviside#Electromagnetic_terms" target="_blank" rel="external"><strong>Oliver Heaviside</strong></a> (1850-1925) was a <strong>self-taught genius</strong> in electrical engineering who made many important contributions in the field. However, he was best known to engineers for his <strong>operational calculus</strong>, a tool for solving linear differential equations with <strong>constant coefficients</strong>, which he discovered around the turn of the century and which was popularized by <a href="https://en.wikipedia.org/wiki/Charles_Proteus_Steinmetz" target="_blank" rel="external"><strong>Steinmetz</strong></a> in the United States.</p>
+<p>For example, he defined such operators:<br><span>$$\begin{aligned}
+p=\frac{d(*)}{dt}\\
+\frac{1}{p}=\int_{-\infty}^{t}(*)dt
+\end{aligned}$$</span><!-- Has MathJax --><br>In this way, a differential equation like this: $r’’+6r’+5r=e’+3e$ can be written as:<br><span>$$\begin{aligned}
+(p+1)(p+5)r=(p+3)e
+\end{aligned}$$</span><!-- Has MathJax --><br>So integral operations and differential operations become multiplications and divisions. It is much easier.</p>
+<p>The operational calculus was severely limited by its lack of mathematical theory, which not only limited its field of application, but also created many uncertainties and ambiguities. Actually Laplace transform was the mathematical theory Heaviside needed, but it was a mathematical obscurity in his time. Sorry for Mr.Heaviside. :(</p>
+<h2 id="4-Laplace-Transform-Applications"><a href="#4-Laplace-Transform-Applications" class="headerlink" title="4. Laplace Transform - Applications"></a>4. Laplace Transform - Applications</h2><p>From <strong>time domain</strong> to <strong>frequency domain</strong>:</p>
+<h4 id="a-Ohm’s-Law"><a href="#a-Ohm’s-Law" class="headerlink" title="a). Ohm’s Law:"></a>a). Ohm’s Law:</h4><span>$$\begin{aligned}
+U=I\times R \Rightarrow U(s)=I(s)R
+\end{aligned}$$</span><!-- Has MathJax -->
+<h4 id="b-VCRs-of-R-L-and-C"><a href="#b-VCRs-of-R-L-and-C" class="headerlink" title="b). VCRs of R, L and C:"></a>b). VCRs of R, L and C:</h4><ul>
+<li>Resistors:<span>$$\begin{aligned}
+\mathcal{L}\{resistor\}=R=r
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Inductors:<span>$$\begin{aligned}
+&amp;\because u(t)=L\frac{di}{dt}\\
+&amp;\therefore U(s)=sLI(s)-Li(0_{-})\\
+&amp;\therefore \mathcal{L}\{inductor\}=sL
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Capacitors:<span>$$\begin{aligned}
+&amp;\because i(t)=C\frac{du}{dt}\\
+&amp;\therefore u(t)=\frac{1}{C}\int_{t_0}^{+\infty}i(t)dt\\
+&amp;\therefore U(s)=\frac{1}{sC}I(s)+\frac{u(0_{-})}{s}\\
+&amp;\therefore \mathcal{L}\{capacitor\}=\frac{1}{sC}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>It’s worth noting that the transformed form of capacitors and inductors is not only related to C and L but also in relation to <strong>the initial values of voltages or currents</strong>.</li>
+</ul>
+<h4 id="c-Laplace-transform-of-some-important-kinds-of-drive-signals"><a href="#c-Laplace-transform-of-some-important-kinds-of-drive-signals" class="headerlink" title="c). Laplace transform of some important kinds of drive signals:"></a>c). Laplace transform of some important kinds of drive signals:</h4><ul>
+<li>Impulse function (<a href="https://en.wikipedia.org/wiki/Dirac_delta_function" target="_blank" rel="external"><strong>Dirac delta function</strong></a>):<span>$$\begin{aligned}
+&amp; f(t)=\delta(t) \Rightarrow F(s)=1\\
+&amp; f(t)=\delta^{n}(t) \Rightarrow F(s)=s^n
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Unit step function (<a href="https://en.wikipedia.org/wiki/Heaviside_step_function" target="_blank" rel="external"><strong>Heaviside step function</strong></a>):<span>$$\begin{aligned}
+&amp; f(t)=\varepsilon(t) \Rightarrow F(s)=\frac{1}{s}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Some polynomial functions:<span>$$\begin{aligned}
+&amp; f(t)=t \Rightarrow F(s)=\frac{1}{s^2}\\
+&amp; f(t)=t^n , n\in \mathbb{N}_{+} \Rightarrow F(s)=\frac{n!}{s^{n+1}}\\
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Exponential functions and trigonometric functions:<span>$$\begin{aligned}
+&amp; f(t)=e^{-at} \Rightarrow F(s)=\frac{1}{s+a}\\
+&amp; f(t)=t^{n}e^{-at} , n\in \mathbb{N}_{+} \Rightarrow F(s)=\frac{n!}{(s+a)^{n+1}}\\
+&amp; f(t)=sin\omega t \Rightarrow F(s)=\frac{\omega}{s^2+\omega^2}\\
+&amp; f(t)=cos\omega t \Rightarrow F(s)=\frac{s}{s^2+\omega^2}\\
+&amp; f(t)=e^{-at}sin(\omega t+\phi) \Rightarrow F(s)=\frac{(s+a)sin\phi+\omega cos\phi}{(s+a)^2+\omega^2}\\
+&amp; f(t)=e^{-at}cos(\omega t+\phi) \Rightarrow F(s)=\frac{(s+a)cos\phi-\omega sin\phi}{(s+a)^2+\omega^2}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>If you need more, check this out: <a href="http://rapidtables.com/math/calculus/laplace_transform.htm" target="_blank" rel="external"><em>Rapidtables: Laplace Transform</em></a>.</li>
+</ul>
+<h4 id="d-Heaviside-Cover-up-Method"><a href="#d-Heaviside-Cover-up-Method" class="headerlink" title="d). Heaviside Cover-up Method"></a>d). Heaviside Cover-up Method</h4><p>The inverse transform of Laplace transform seems to be too complicated, so O. Heaviside taught us his “empirical” method, actually also some tricks to deal with differential equations just like his “operational calculus”: <a href="https://en.wikipedia.org/wiki/Heaviside_cover-up_method" target="_blank" rel="external">Heaviside cover-up method</a>.</p>
+<h2 id="FINALLY…"><a href="#FINALLY…" class="headerlink" title="FINALLY…"></a>FINALLY…</h2><p>That’s all:</p>
+<ol>
+<li>DC resistive circuits: Ohm’s law, Kirchhoff’s circuit laws, Thévenin’s theorem.</li>
+<li>Periodic AC circuits: Phasor method, Fourier series, superposition theorem.</li>
+<li>ANY circuit: Laplace transform.<br>…<br>I need a nap…<br><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/sleepingcat.png" alt=""></li>
+</ol>
+<p><strong>References:</strong></p>
+<ul>
+<li>Li,Hansun. <em>Basis of Circuit Analysis</em>, 4th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li>Lin,Chunying. <em>Electric Circuits and Magnetic Circuits</em>, 2nd ed. [M]. Beijing: China Electric Power Press, 2014.</li>
+<li>Department of Mathematics, Tongji University, <em>Advanced Mathematics</em>, 6th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li>Song,Suluo. <em>Complex Function and Integral Transform</em>. [M]. Beijing: Science Press, 2013.</li>
+<li>Calvert,James. <em>Heaviside, Laplace and the Inversion Integral</em> [EB/OL]. <a href="http://mysite.du.edu/~jcalvert/math/laplace.htm" target="_blank" rel="external">http://mysite.du.edu/~jcalvert/math/laplace.htm</a>, 2016-01-30.</li>
+<li>Miller,James. <em>Methods of Finding Laplace Transforms and Inverse Transforms, etc.</em> [EB/OL]. <a href="http://www.solitaryroad.com/c913.html" target="_blank" rel="external">http://www.solitaryroad.com/c913.html</a>, 2016-01-31.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-01-31.</li>
+<li><em>Wikibooks</em> [EB/OL]. <a href="https://en.wikibooks.org/wiki/Main_Page" target="_blank" rel="external">https://en.wikibooks.org/wiki/Main_Page</a>, 2016-01-31.</li>
+<li><em>Rapidtables</em> [EB/OL]. <a href="http://rapidtables.com/" target="_blank" rel="external">http://rapidtables.com/</a>, 2016-01-31.</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://samlyu.github.io/2016/01/29/Circuit-Analysis-Pt-3/" data-id="ciren0j790007542es4sq8mm3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow me on:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/ShengweiLv" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/samlyu" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/shengweilyu" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/01/31/Birthday-Again/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Birthday Again
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/01/28/Circuit-Analysis-Pt-2/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Circuit Analysis Pt.2</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-07-08-P-N-Junction-Semiconductor-Devices/pnjunction.png)" alt="P-N Junction &amp; Semiconductor Devices" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="title">P-N Junction &amp; Semiconductor Devices</a></p>
+                            <p class="item-date"><time datetime="2016-07-13T16:00:00.000Z" itemprop="datePublished">2016-07-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/emf%2001.jpg)" alt="Electromagnetic Field: Maxwell&#39;s Equations" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="title">Electromagnetic Field: Maxwell&#39;s Equations</a></p>
+                            <p class="item-date"><time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished">2016-03-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png)" alt="Electromagnetic Field: Magnetostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="title">Electromagnetic Field: Magnetostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png)" alt="Electromagnetic Field: Electrostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="title">Electromagnetic Field: Electrostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/vectorfield.jpg)" alt="Electromagnetic Field: Vector Analysis" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="title">Electromagnetic Field: Vector Analysis</a></p>
+                            <p class="item-date"><time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/">EECS</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/Theories/">Theories</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analog-electronics/">analog-electronics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/circuit-analysis/">circuit-analysis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electromagnetic-field/">electromagnetic-field</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miscellaneous/">miscellaneous</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Lyu</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a> & <a href="//atom.io/" target="_blank">Atom</a>. Theme by <a href="//github.com/ppoffice" target="_blank">Ruipeng Zhang</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

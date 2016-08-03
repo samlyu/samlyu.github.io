@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Circuit Analysis Pt.1 | Samuel Lyu&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="circuit-analysis" />
+    
+    <meta name="description" content="Circuit analysis is the process of finding the voltages across, and the currents through, of every component in the network, for voltages and currents are the basic values of components. Once you got">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Circuit Analysis Pt.1">
+<meta property="og:url" content="http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/index.html">
+<meta property="og:site_name" content="Samuel Lyu's Blog">
+<meta property="og:description" content="Circuit analysis is the process of finding the voltages across, and the currents through, of every component in the network, for voltages and currents are the basic values of components. Once you got">
+<meta property="og:image" content="http://samlyu.github.io/images/2016-01-24-Circuit-Analysis-Pt-1/series_circuit.jpg">
+<meta property="og:updated_time" content="2016-08-03T05:19:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Circuit Analysis Pt.1">
+<meta name="twitter:description" content="Circuit analysis is the process of finding the voltages across, and the currents through, of every component in the network, for voltages and currents are the basic values of components. Once you got">
+<meta name="twitter:image" content="http://samlyu.github.io/images/2016-01-24-Circuit-Analysis-Pt-1/series_circuit.jpg">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Notes and Scribbles</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About/">About</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/">EECS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EECS/Theories/">Theories</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/EECS/Theories/">Theories</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Circuit-Analysis-Pt-1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Circuit Analysis Pt.1
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/01/24/Circuit-Analysis-Pt-1/" class="article-date">
+    <time datetime="2016-01-23T16:00:00.000Z" itemprop="datePublished">2016-01-24</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/circuit-analysis/">circuit-analysis</a></li></ul>
+
+            </div>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/series_circuit.jpg" alt=""><br><br><br><strong>Circuit analysis</strong> is the process of finding the <strong>voltages</strong> across, and the <strong>currents</strong> through, of every component in the network, for voltages and currents are the basic values of components. Once you got the U (Voltage) and I (current) of a component, it’s easy for you to know how the component works. There are many different techniques for calculating these values. However, for the most part, the applied technique assumes that the components of the network are all <strong>linear</strong>. Not like something inside <em>the electromagnetic field</em> whose U-I relational expression is a function with space and time as variables, components in a linear circuit network is much more lumped and abstract.</p>
+<p>The foundation of circuit analysis is basically built by 3 people, in the 19th century.<br><br><br><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/scientists.jpg" alt=""></p>
+<h2 id="1-Ohm’s-Law"><a href="#1-Ohm’s-Law" class="headerlink" title="1. Ohm’s Law"></a>1. Ohm’s Law</h2><p>$$U={R}\times{I}$$<br>Actually in 1781 <strong>Henry Cavendish</strong> discovered the above law first but he was unwilling to share it with people, so after Ohm published his result of his work on resistance in 1827, this law was named after him but not the real first discoverer.</p>
+<p>In my opinion, the Ohm’s Law shows a character of common materials: They “resist” the current running through them. In other words, <strong>alomst everything can consume energy, and the ways they consume energy have to obey this rule.</strong></p>
+<p>And this law is exactly the foundation of everything in linear circuit analysis.</p>
+<ul>
+<li>By the way, we have to be aware of the <strong>reference directions</strong> in the circuits. If in your circuit, you assume that the voltage across a component is in the opposite direction with the current running through it, the Ohm’s law should be written as:<br>$$U=-{R}\times{I}$$</li>
+</ul>
+<h2 id="2-Kirchhoff’s-circuit-laws"><a href="#2-Kirchhoff’s-circuit-laws" class="headerlink" title="2. Kirchhoff’s circuit laws"></a>2. Kirchhoff’s circuit laws</h2><ol>
+<li>KCL: The algebraic sum of currents in a network of conductors meeting at a point is zero.<br>$$\sum_{k=1}^n I_k=0$$</li>
+<li>KVL: The algebraic sum of the products of the resistances of the conductors and the currents in them in a closed loop is equal to the total emf available in that loop.<br>$$\sum_{k=1}^n U_k=0$$</li>
+</ol>
+<p><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/nodeandloop.png" alt=""></p>
+<p>These laws are actually another ways to express the spirit of the conservation of matter and energy. Using these 2 laws we are capable of solving some more complex circuit problems but not just the basic series circuit or parallel circuit problems. On the basis of these 2 laws, we have the methods of <a href="https://en.wikipedia.org/wiki/Nodal_analysis" target="_blank" rel="external"><strong>nodal analysis</strong></a> and <a href="https://en.wikipedia.org/wiki/Mesh_analysis" target="_blank" rel="external"><strong>mesh analysis</strong></a>. Now we can solve every problem of a DC circuit with <strong>resistors</strong> and <a href="https://en.wikipedia.org/wiki/Dependent_source" target="_blank" rel="external"><strong>dependent source</strong></a> in it.</p>
+<ul>
+<li><strong>BY THE WAY</strong>, sometimes we may find some odd parts in a circuit like these:<br><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/dytransform.png" alt=""></li>
+<li>In this case, we have to simplify the circuit by doing the <a href="https://en.wikipedia.org/wiki/Y-%CE%94_transform" target="_blank" rel="external"><strong>Y-Δ transform</strong></a>.<span>$$\begin{aligned}
+R_y=\frac{R&apos;R&apos;&apos;}{\sum{R_{\Delta}}}
+\end{aligned}$$</span><!-- Has MathJax -->
+<span>$$\begin{aligned}
+R_\Delta=\frac{R_1R_2+R_2R_3+R_3R_1}{R_{opposite}}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+</ul>
+<h2 id="3-Thevenin’s-theorem"><a href="#3-Thevenin’s-theorem" class="headerlink" title="3.  Thévenin’s theorem"></a>3.  Thévenin’s theorem</h2><p>As originally stated in terms of DC resistive circuits only, Thévenin’s theorem holds that:</p>
+<ul>
+<li>Any linear electrical network with voltage and current sources and only resistances can be replaced at terminals A-B by <em>an equivalent voltage source in series connection with an equivalent resistance</em>.</li>
+<li>This equivalent voltage $U_{oc}$ is the voltage obtained at terminals A-B of the network with terminals A-B <em>open circuited</em>.</li>
+<li>This equivalent resistance $R_{th}$ is the resistance obtained at terminals A-B of the network with <em>all its independent current sources open circuited</em> and <em>all its independent voltage sources short circuited</em>.</li>
+</ul>
+<p><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/blackboxtovandr.png" alt=""></p>
+<p>Now we can not only solve complex linear circuit analysis problems, but also transform the complex circuits into their simplified “Thevenin” equivalent forms.</p>
+<ul>
+<li><strong>BY THE WAY</strong>, let’s think about how much power we can get from the circuits and how to get the maximum power.</li>
+<li>Around 1840, <a href="https://en.wikipedia.org/wiki/Moritz_von_Jacobi" target="_blank" rel="external"><strong>Moritz von Jacobi</strong></a> published the maximum power (transfer) theorem: the <strong>“Jacobi’s law”</strong>.</li>
+<li>to obtain maximum external power from a source with a finite internal resistance, the resistance of the load must <em>equal the resistance of the source as viewed from its output terminals</em>. So here we get:<span>$$\begin{aligned}
+R_{L}=R_{th}\\
+P_{max}=\frac{u^{2}_{oc}}{4R_{th}}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li><strong>MEANWHILE</strong>, sometimes we may find some strange but useful components in our circuits, their U/I are not determined by their own I/U but the I/U of other components. They are <a href="https://en.wikipedia.org/wiki/Dependent_source" target="_blank" rel="external"><strong>dependent sources</strong></a>: VCVS, VCCS, CCVS, CCCS. They are very useful if we want to control the U/I of our target components.</li>
+</ul>
+<h2 id="However…"><a href="#However…" class="headerlink" title="However…"></a>However…</h2><p>Resistance is only one of the 3 basic characters of materials. The other 2 characters are <strong>capacitance (C)</strong> and <strong>inductance (L)</strong>. If we take them into consideration, the U-I relational expressions we get are:<br>$$i(t)=C\frac{du}{dt}$$<br>and<br>$$u(t)=L\frac{di}{dt}$$</p>
+<ul>
+<li>It’s worth noting that: because of the conservation of matter and energy, the voltage across a capacitor $u_C(t)$ and the current inside a inductor $i_L(t)$ cannot change instantly but can only be changed gradually and continuously. They are the <a href="https://en.wikipedia.org/wiki/State_variable" target="_blank" rel="external"><strong>state variables</strong></a> of the circuit.</li>
+</ul>
+<p>Apparently, these equations are no longer linear. If there is only 1 capacitor or inductor in a DC circuit ( <a href="https://en.wikipedia.org/wiki/RC_circuit" target="_blank" rel="external">RC circuit</a> or <a href="https://en.wikipedia.org/wiki/LC_circuit" target="_blank" rel="external">LC circuit</a> ), we can use differential equations to solve them.</p>
+<p>For example:</p>
+<ul>
+<li>$y(t)$ means a voltage or current in a circuit.</li>
+<li>$y(0_+)$ means the initial value.</li>
+<li>$y(\infty)$ means the stable value.</li>
+<li>$\tau$ is the <a href="https://en.wikipedia.org/wiki/Time_constant" target="_blank" rel="external"><strong>time constant</strong></a> of the circuit. ( $\tau=RC$ or $\tau=\frac{L}{R}$ )</li>
+</ul>
+<p>The point is: we must figure out the 3 elements: $y(0_+)$, $y(\infty)$ and $\tau$, so that we can solve the circuit.</p>
+<p>$$y(t)=y(\infty)+[y(0_+)-y(\infty)]e^{-\frac{t}{\tau}}$$</p>
+<p>MISSION ACCOMPLISHED.</p>
+<h2 id="However…-1"><a href="#However…-1" class="headerlink" title="However…"></a>However…</h2><p>If there are many capacitors and inductors in a circuit, or the source of the circuit is not DC, it will be very exhausting to deal with it by solving differential equations. How can we solve it in some linear methods??</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Li,Hansun. <em>Basis of Circuit Analysis</em>, 4th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-01-24.</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/" data-id="ciren0j600000542e0l6jr5w1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow me on:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/ShengweiLv" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/samlyu" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/shengweilyu" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/01/28/Circuit-Analysis-Pt-2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Circuit Analysis Pt.2
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/01/23/Introduction/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Introduction</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-07-08-P-N-Junction-Semiconductor-Devices/pnjunction.png)" alt="P-N Junction &amp; Semiconductor Devices" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/07/14/P-N-Junction-Semiconductor-Devices/" class="title">P-N Junction &amp; Semiconductor Devices</a></p>
+                            <p class="item-date"><time datetime="2016-07-13T16:00:00.000Z" itemprop="datePublished">2016-07-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/emf%2001.jpg)" alt="Electromagnetic Field: Maxwell&#39;s Equations" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/" class="title">Electromagnetic Field: Maxwell&#39;s Equations</a></p>
+                            <p class="item-date"><time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished">2016-03-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png)" alt="Electromagnetic Field: Magnetostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/06/Electromagnetic-Field-Magnetostatics/" class="title">Electromagnetic Field: Magnetostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png)" alt="Electromagnetic Field: Electrostatics" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/03/03/Electromagnetic-Field-Electrostatics/" class="title">Electromagnetic Field: Electrostatics</a></p>
+                            <p class="item-date"><time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/vectorfield.jpg)" alt="Electromagnetic Field: Vector Analysis" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EECS/">EECS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EECS/Theories/">Theories</a></p>
+                            <p class="item-title"><a href="/2016/02/04/Electromagnetic-Field-Vector-Analysis/" class="title">Electromagnetic Field: Vector Analysis</a></p>
+                            <p class="item-date"><time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/">EECS</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/EECS/Theories/">Theories</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analog-electronics/">analog-electronics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/circuit-analysis/">circuit-analysis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electromagnetic-field/">electromagnetic-field</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miscellaneous/">miscellaneous</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Lyu</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a> & <a href="//atom.io/" target="_blank">Atom</a>. Theme by <a href="//github.com/ppoffice" target="_blank">Ruipeng Zhang</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

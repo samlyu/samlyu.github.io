@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Samuel Lyu&#39;s Blog</title>
+  <subtitle>Notes and Scribbles</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://samlyu.github.io/"/>
+  <updated>2016-08-03T05:19:32.000Z</updated>
+  <id>http://samlyu.github.io/</id>
+  
+  <author>
+    <name>Samuel Lyu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>P-N Junction &amp; Semiconductor Devices</title>
+    <link href="http://samlyu.github.io/2016/07/14/P-N-Junction-Semiconductor-Devices/"/>
+    <id>http://samlyu.github.io/2016/07/14/P-N-Junction-Semiconductor-Devices/</id>
+    <published>2016-07-13T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-07-08-P-N-Junction-Semiconductor-Devices/pnjunction.png" alt=""></p>
+<p>We have already learned something about circuit analysis, while to really build our circuits into practical ones, there’s still much more to do.</p>
+<p>A simple question is that, if we want to <strong>amplify</strong> our signals, like turning up the radio or enlarging an image, what kind of circuits should we build? Apparently simple resistors, capacitors an|d inductors cannot manage tasks like that.</p>
+<p>Therefore, we need the theory of <a href="https://en.wikipedia.org/wiki/P%E2%80%93n_junction" target="_blank" rel="external"><strong>p–n junction</strong></a> and some <a href="https://en.wikipedia.org/wiki/Semiconductor_device" target="_blank" rel="external"><strong>semiconductor devices</strong></a>.</p>
+<h2 id="1-P-type-amp-N-type-semiconductors"><a href="#1-P-type-amp-N-type-semiconductors" class="headerlink" title="1. P-type &amp; N-type semiconductors"></a>1. P-type &amp; N-type semiconductors</h2><p>When we are talking about “computers” and “chemical elements”, one term always comes into our minds: “<a href="https://en.wikipedia.org/wiki/Silicon" target="_blank" rel="external"><strong>Silicon</strong></a>“ or <strong>Si</strong>. It’s a perfect tetravalent metalloid, with 4 outermost electrons, hence it can be changed to be conductor or nonconductor easily. It is, actually, a kind of <a href="https://en.wikipedia.org/wiki/Intrinsic_semiconductor" target="_blank" rel="external"><strong>intrinsic semiconductor</strong></a>: It is a pure semiconductor without any significant dopant species present. In intrinsic semiconductors the number of excited <a href="https://en.wikipedia.org/wiki/Electron" target="_blank" rel="external"><strong>electrons</strong></a> and the number of <a href="https://en.wikipedia.org/wiki/Electron_hole" target="_blank" rel="external"><strong>holes</strong></a> are equal.</p>
+<p>What we are going to do is <a href="https://en.wikipedia.org/wiki/Doping" target="_blank" rel="external"><strong>doping</strong></a>, which means to combine our silicon with some other elements like <a href="https://en.wikipedia.org/wiki/Phosphorus" target="_blank" rel="external"><strong>phosphorus</strong></a> or <a href="https://en.wikipedia.org/wiki/Boron" target="_blank" rel="external"><strong>Boron</strong></a>. This kind of doping will change the intrinsic semiconductors into doped ones. Their electrons will outnumber holes, which means they are ultimately <strong>N-type semiconductor</strong>, or their holes will outnumber electrons, which means they are ultimately <strong>P-type semiconductor</strong>. After the doping processes, we can assemble our semiconductors and make them into semiconductor devices.</p>
+<h2 id="2-Diode-amp-P-N-Junction"><a href="#2-Diode-amp-P-N-Junction" class="headerlink" title="2. Diode &amp; P-N Junction"></a>2. Diode &amp; P-N Junction</h2><p><img src="/images/2016-07-08-P-N-Junction-Semiconductor-Devices/diode.png" alt=""></p>
+<p>The simplest application of P-type &amp; N-type semiconductors should be the production of <a href="https://en.wikipedia.org/wiki/Diode" target="_blank" rel="external"><strong>diodes</strong></a>. We always utilize this kind of components as lights or to indicate the directions of currents in the circuits for us. Actually the structure of a diode is exactly a <a href="https://en.wikipedia.org/wiki/P%E2%80%93n_junction" target="_blank" rel="external"><strong>p–n junction</strong></a>.</p>
+<p>We can imagine the electrons and holes as grains of sand with negative and positive charges. We already know from our high school physics lessons that something with a higher concentration will always <strong>diffuse</strong> themselves, and something with a lower concentration will always <strong>drift</strong> themselves, these are exactly what our “sands” will do. When we put a piece of P-type semiconductor and a piece of N-type semiconductor together, the <a href="https://en.wikipedia.org/wiki/Charge_carrier" target="_blank" rel="external"><strong>majority carriers</strong></a> in these semiconductors will diffuse, and the <strong>minority carriers</strong> will drift themselves. While they meet each other on the boundary, departure of an electron from the N-side to the P-side leaves a positive donor ion behind on the N-side, and likewise the hole leaves a negative acceptor ion on the P-side. This creates an electric field that provides a force <strong>opposing</strong> the continued exchange of charge carriers. Just like the sands pile up and finally become a <strong>dam</strong>. This sand dam stop the sands, which are electrons and holes, from flowing. The sand dam is a <strong>p-n junction</strong>, or called <a href="https://en.wikipedia.org/wiki/Depletion_region" target="_blank" rel="external"><strong>depletion region</strong></a>.</p>
+<p>One of the distinct characteristics of a p-n junction is that it has <a href="https://en.wikipedia.org/wiki/P%E2%80%93n_junction#Forward_bias" target="_blank" rel="external"><strong>forward bias</strong></a> and <a href="https://en.wikipedia.org/wiki/P%E2%80%93n_junction#Reverse_bias" target="_blank" rel="external"><strong>reverse bias</strong></a>.</p>
+<p>In forward bias, the p-type is connected with the positive terminal of a battery and the n-type is connected with the negative terminal. The external electric field will push the majority carriers into the p-n junction. This makes the depletion region, or p-n junction, narrower. Just like we lower our sand dam so that the sands can flow smoothly. Similarly, under reverse bias, the electric field in the p-n junction become stronger, just like we make a higher dam to stop the sand currents.</p>
+<ul>
+<li>The current formula in a p-n junction:<span>$$\begin{aligned}
+i=I_{S}(e^{\frac{qu}{kT}}-1)=I_{S}(e^{\frac{u}{U_{T}}}-1)
+\end{aligned}$$</span><!-- Has MathJax -->
+Where $I_{S}$ is the <a href="https://en.wikipedia.org/wiki/Saturation_current" target="_blank" rel="external"><strong>reverse saturation current</strong></a>, $q$ is the charge of an electron, $k$ is <a href="https://en.wikipedia.org/wiki/Boltzmann_constant" target="_blank" rel="external"><strong>Boltzmann constant</strong></a>, $T$ is <a href="https://en.wikipedia.org/wiki/Thermodynamic_temperature" target="_blank" rel="external"><strong>thermodynamic temperature</strong></a>. We can replace $\frac{kT}{q}$ with $U_{T}$. When $T=300K$, $U_{T}\approx 26mV$.</li>
+<li>Important features of a diode including the <strong>maximum forward rectified current</strong> ( $I_{FM}$ ), the <strong>maximum reverse operating voltage</strong> ( $U_{RM}$ ), <strong>cut-in voltage</strong> ( $U_{on}$ ), etc. The average $U_{on}$ of a silicon diode is about 0.7V while for a germanium diode it’s about 0.5V.</li>
+<li>There are different types of diodes, like <a href="https://en.wikipedia.org/wiki/Light-emitting_diode" target="_blank" rel="external"><strong>LED</strong></a>, <a href="https://en.wikipedia.org/wiki/Schottky_diode" target="_blank" rel="external"><strong>Schottky diode</strong></a>, <a href="https://en.wikipedia.org/wiki/Zener_diode" target="_blank" rel="external"><strong>Zener diode</strong></a>, etc.</li>
+</ul>
+<h2 id="3-Bipolar-Junction-Transistor-BJT"><a href="#3-Bipolar-Junction-Transistor-BJT" class="headerlink" title="3. Bipolar Junction Transistor ( BJT )"></a>3. Bipolar Junction Transistor ( BJT )</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-07-08-P-N-Junction-Semiconductor-Devices/pnjunction.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We have already learned something about ci
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="analog-electronics" scheme="http://samlyu.github.io/tags/analog-electronics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electromagnetic Field: Maxwell&#39;s Equations</title>
+    <link href="http://samlyu.github.io/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/"/>
+    <id>http://samlyu.github.io/2016/03/13/Electromagnetic-Field-Maxwell-s-Equations/</id>
+    <published>2016-03-12T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/emf%2001.jpg" alt=""></p>
+<p>We have already learned something about <a href="http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/"><strong>electrostatics</strong></a> and <a href="https://en.wikipedia.org/wiki/Magnetostatics" target="_blank" rel="external"><strong>magnetostatics</strong></a>. However these laws and formulas and equations are kind of complicated and messy. Real truths should not be something like those. They should be something like, you know, <a href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion" target="_blank" rel="external"><strong>Newton’s Laws of motion</strong></a>. So, how can we <strong>simplify</strong> them? How can we <strong>unify</strong> them?</p>
+<p>In a paper published in 1861: <a href="https://en.wikipedia.org/wiki/On_Physical_Lines_of_Force" target="_blank" rel="external"><em>On physical lines of force</em></a>, <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell#Electromagnetism" target="_blank" rel="external"><strong>James Clerk Maxwell</strong></a>, a great Scottish scientist, gave us his answer. The equations in his papers were later improved and perfected, and named as <a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations" target="_blank" rel="external"><strong>Maxwell’s equations</strong></a>. Maxwell’s equations describe how electric and magnetic fields are generated and altered by each other and by charges and currents. These equations are a set of <strong>partial differential equations</strong> that, together with the <a href="https://en.wikipedia.org/wiki/Lorentz_force" target="_blank" rel="external"><strong>Lorentz force law</strong></a>, form the foundation of <strong>classical electrodynamics</strong>, <strong>classical optics</strong>, and <strong>electric circuits</strong>.</p>
+<p><img src="/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/Maxwell.png" alt=""></p>
+<p>Now let’s set these equations apart and give them some explanations.</p>
+<h2 id="1-Faraday’s-Law-of-Induction"><a href="#1-Faraday’s-Law-of-Induction" class="headerlink" title="1. Faraday’s Law of Induction"></a>1. Faraday’s Law of Induction</h2><p><strong>Electromagnetic induction</strong> was discovered by <a href="https://en.wikipedia.org/wiki/Michael_Faraday" target="_blank" rel="external"><strong>Michael Faraday</strong></a> in 1831. Michael Faraday explained electromagnetic induction using a concept he called <strong>lines of force</strong>. However, scientists at the time widely <strong>rejected</strong> his theoretical ideas, mainly because they were not <strong>formulated mathematically</strong>. An exception was Maxwell. In Maxwell’s papers, the <strong>time-varying aspect</strong> of electromagnetic induction is expressed as a differential equation which <a href="https://en.wikipedia.org/wiki/Oliver_Heaviside" target="_blank" rel="external"><strong>Oliver Heaviside</strong></a> ( him again :-D ) referred to as Faraday’s law even though it is different from the original version of Faraday’s law, and does not describe motional electromotive force.</p>
+<p>As we already learned in high school, there are two kinds of <a href="https://en.wikipedia.org/wiki/Electromotive_force" target="_blank" rel="external"><strong>electromotive forces</strong></a>, aka EMF.</p>
+<p>One is generated by the movements of coils in constant magnetic fields ( <strong>motional EMF</strong> ), this is how a <a href="https://en.wikipedia.org/wiki/Dynamo" target="_blank" rel="external"><strong>dynamo</strong></a> works:<br><span>$$\begin{aligned}
+\varepsilon=\oint_{l}(\vec{v}\times\vec{B})\cdot d\vec{l}=-\oint_{l}(\vec{B}\times\vec{v})\cdot d\vec{l}
+\end{aligned}$$</span><!-- Has MathJax --><br>The other one is generated by the changing magnetic field, in which the coils are motionless ( <strong>induced EMF</strong> ), this is how a <a href="https://en.wikipedia.org/wiki/Transformer" target="_blank" rel="external"><strong>transformer</strong></a> works:<br><span>$$\begin{aligned}
+\varepsilon=-\frac{d\Psi}{dt}=-\frac{d}{dt}\int_{S}\vec{B}\cdot d\vec{S}
+\end{aligned}$$</span><!-- Has MathJax --><br>There is a negative sign, because of <a href="https://en.wikipedia.org/wiki/Lenz%27s_law" target="_blank" rel="external"><strong>Lenz’s law</strong></a>.</p>
+<p>So, altogether:<br><span>$$\begin{aligned}
+\varepsilon=\oint_{l}(\vec{v}\times\vec{B})\cdot d\vec{l}-\frac{d}{dt}\int_{S}\vec{B}\cdot d\vec{S}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>We should note that electromotive forces are more <strong>essential</strong> than <strong>induced currents</strong>. Only in a conductor you can detect the induced currents, while you can get the electromotive forces on everything inside a magnetic field.</p>
+<p>The above equations are born before Maxwell had his thoughts. What Maxwell did was: he assumed that there should be a surrounding <strong>electric field</strong> generated by every <strong>changing magnetic field</strong>. This kind of electric field, called <strong>induced electric field</strong>, can take some effect on electric charges.<br><span>$$\begin{aligned}
+\oint_l\vec{E_i}\cdot d\vec{l}=\oint_{l}(\vec{v}\times\vec{B})\cdot d\vec{l}-\frac{d}{dt}\int_{S}\vec{B}\cdot d\vec{S}
+\end{aligned}$$</span><!-- Has MathJax --><br>The force lines of this kind of field are <strong>closed</strong>, not the same kind of force lines of a static electric field.</p>
+<p>Then, Maxwell imagined the situation when a <strong>static electric field</strong>, generated by a static electric charge, and an <strong>induced electric field</strong>, excited by a changing magnetic field, <strong>coexist</strong>:<br><span>$$\begin{aligned}
+&amp;\oint_l\vec{E}\cdot d\vec{l}=\oint_l\vec{E_i}\cdot d\vec{l}+\oint_l\vec{E_q}\cdot d\vec{l}\\
+&amp;\because\oint_l\vec{E_q}\cdot d\vec{l}=0\\
+&amp;\therefore\oint_l\vec{E}\cdot d\vec{l}=\oint_{l}(\vec{v}\times\vec{B})\cdot d\vec{l}-\frac{d}{dt}\int_{S}\vec{B}\cdot d\vec{S}\\
+&amp;\therefore\int_S\nabla\times\vec{E}\cdot d\vec{S}=-\int_S(\frac{\partial\vec{B}}{\partial t}-\nabla\times(\vec{v}\times\vec{B}))\cdot d{S}\\
+&amp;\therefore\nabla\times\vec{E}=\nabla\times(\vec{v}\times\vec{B})-\frac{\partial\vec{B}}{\partial t}\\
+\end{aligned}$$</span><!-- Has MathJax --><br>When the coils are not moving:<br><span>$$\begin{aligned}
+\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}
+\end{aligned}$$</span><!-- Has MathJax --><br>In integral form:<br><span>$$\begin{aligned}
+\oint_l\vec{E}\cdot d\vec{l}=-\int_S\frac{\partial\vec{B}}{\partial t}\cdot d\vec{S}
+\end{aligned}$$</span><!-- Has MathJax --><br>These above two equations are the differential form and integral form of one of the four Maxwell’s equations: <a href="https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction#Maxwell.E2.80.93Faraday_equation" target="_blank" rel="external"><strong>the Maxwell–Faraday equation</strong></a>.</p>
+<h2 id="2-Ampere’s-Circuital-Law"><a href="#2-Ampere’s-Circuital-Law" class="headerlink" title="2. Ampère’s Circuital Law"></a>2. Ampère’s Circuital Law</h2><p>The previous equation tells us that magnetic fields can excite electric fields, now let’s consider whether electric fields can excite magnetic fields.</p>
+<p>Actually we have learned the <a href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law" target="_blank" rel="external"><strong>Ampère’s circuital law</strong></a> in <a href="http://samlyu.github.io/2016/03/06/Electromagnetic-Field-Magnetostatics/">magnetostatics</a>:<br><span>$$\begin{aligned}
+\oint_{l}\vec{H}\cdot d\vec{l}=I
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>However, this equation is false in some situations, like this:<br><img src="/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/displacement.eg.png" alt=""><br>Here we have a plane-parallel capacitor in a circuit. If we use Ampère’s circuital law to calculate the current:<br>Through plane $S_{1}$:<br><span>$$\begin{aligned}
+\oint_{l}\vec{H}\cdot d\vec{l}=\int_{S_{1}}\vec{J}\cdot d\vec{S}=I
+\end{aligned}$$</span><!-- Has MathJax --><br>Through plane $S_{2}$:<br><span>$$\begin{aligned}
+\oint_{l}\vec{H}\cdot d\vec{l}=\int_{S_{2}}\vec{J}\cdot d\vec{S}=0
+\end{aligned}$$</span><!-- Has MathJax --><br>Apparently, the currents should be equal. How can we resolve the contradiction?</p>
+<p>Maxwell assumed that there is some kind of current passing through the capacitor, but this kind of current is not the common kind of current we can measure in a wire, it is <a href="https://en.wikipedia.org/wiki/Displacement_current" target="_blank" rel="external"><strong>displacement current</strong></a>. This kind of current is generated by a changing current, that’s why we are not aware of it if the current is steady in our circuit.</p>
+<p>Of course, fields that generate displacement currents are called <a href="https://en.wikipedia.org/wiki/Electric_displacement_field" target="_blank" rel="external"><strong>electric displacement field</strong></a>, the same $\vec{D}$ we used in <a href="http://samlyu.github.io/2016/03/06/Electromagnetic-Field-Magnetostatics/">magnetostatics</a>.</p>
+<span>$$\left\{
+\begin{aligned}
+&amp;\oint_{l}\vec{H}\cdot d\vec{l}=\oint_{S}(\vec{J}+\vec{J}_{D})\cdot d\vec{S}=\oint_{S}(\vec{J}+\frac{\partial \vec{D}}{\partial t})\cdot d\vec{S}\\
+&amp;\nabla\times\vec{H}=\vec{J}+\frac{\partial \vec{D}}{\partial t}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax -->
+<p>These above two equations are the integral form and differential form of one of the four Maxwell’s equations: <a href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law#Extending_the_original_law:_the_Maxwell.E2.80.93Amp.C3.A8re_equation" target="_blank" rel="external"><strong>the Maxwell–Ampère equation</strong></a>.</p>
+<h2 id="3-Maxwell’s-Equations"><a href="#3-Maxwell’s-Equations" class="headerlink" title="3. Maxwell’s Equations"></a>3. Maxwell’s Equations</h2><p>Now we know that electric fields and magnetic fields can activate each other and Maxwell used 2 of his 4 equations to explain this. The other 2 of his equations tell us the shapes of these fields, actually they are <a href="https://en.wikipedia.org/wiki/Gauss%27s_law" target="_blank" rel="external"><strong>Guass’s Law</strong></a> and <a href="https://en.wikipedia.org/wiki/Gauss%27s_law_for_magnetism" target="_blank" rel="external"><strong>Gauss’s law for magnetism</strong></a>. We have learned those before.</p>
+<p>So, as a whole, Maxwell’s equations are:<br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla\cdot\vec{D}=\rho_{V}\\
+&amp;\nabla\cdot\vec{B}=0\\
+&amp;\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}\\
+&amp;\nabla\times\vec{H}=\vec{J}+\frac{\partial\vec{D}}{\partial t}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Or:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_{S}\vec{D}\cdot d\vec{S}=Q\\
+&amp;\oint_{S}\vec{B}\cdot d\vec{S}=0\\
+&amp;\oint_{l}\vec{E}\cdot d\vec{l}=-\int_{S}\frac{\partial\vec{B}}{\partial t}\cdot d\vec{S}\\
+&amp;\oint_{l}\vec{H}\cdot d\vec{l}=\oint_{S}(\vec{J}+\frac{\partial\vec{D}}{\partial t})\cdot d\vec{S}=I\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<p><strong>By using these 4 equations, Maxwell simplified and unified electric fields and magnetic fields. They are all</strong> <a href="https://en.wikipedia.org/wiki/Electromagnetic_field" target="_blank" rel="external"><strong>electromagnetic fields</strong></a>.</p>
+<h2 id="4-Boundary-Conditions"><a href="#4-Boundary-Conditions" class="headerlink" title="4. Boundary Conditions:"></a>4. Boundary Conditions:</h2><p>Just like what we’ve learned in electrostatic and magnetostatics:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{E}_{1tan}=\vec{E}_{2tan}\\
+&amp;\vec{B}_{1nor}=\vec{B}_{2nor}\\
+&amp;\vec{D}_{2nor}-\vec{D}_{1nor}=\sigma_{f}\\
+&amp;\vec{H}_{1tan}-\vec{H}_{2tan}=\vec{K}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h2 id="5-The-Speed-of-Light"><a href="#5-The-Speed-of-Light" class="headerlink" title="5. The Speed of Light"></a>5. The Speed of Light</h2><p>Let’s do something else now. First, in a vacuum, the Maxwell’s equations become:<br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla\times\vec{H}=\varepsilon\frac{\partial\vec{E}}{\partial t}\\
+&amp;\nabla\times\vec{E}=-\mu\frac{\partial\vec{H}}{\partial t}\\
+&amp;\nabla\cdot\vec{H}=0\\
+&amp;\nabla\cdot\vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<p>Let’s calculate the curls of each side of the first equation.<br><span>$$\begin{aligned}
+&amp;\nabla\times\nabla\times\vec{H}=\nabla\times(\varepsilon\frac{\partial\vec{E}}{\partial t})\varepsilon\frac{\partial}{\partial t}(\nabla\times\vec{E})
+\end{aligned}$$</span><!-- Has MathJax --><br>Because of the identical equation we’ve learned in <a href="http://localhost:4000/2016/02/04/Electromagnetic-Field-Vector-Analysis/" target="_blank" rel="external">vector analysis</a>:<br><span>$$\begin{aligned}
+\nabla\times\nabla\times\vec{H}=\nabla(\nabla\cdot\vec{H})-\nabla^{2}\vec{H}
+\end{aligned}$$</span><!-- Has MathJax --><br>We can get the <a href="https://en.wikipedia.org/wiki/Electromagnetic_wave_equation" target="_blank" rel="external"><strong>electromagnetic wave equation</strong></a>:<br><span>$$\begin{aligned}
+\nabla^{2}\vec{H}-\mu\varepsilon\frac{\partial^{2}\vec{H}}{\partial t^{2}}=0
+\end{aligned}$$</span><!-- Has MathJax --><br>For the same reason:<br><span>$$\begin{aligned}
+\nabla^{2}\vec{E}-\mu\varepsilon\frac{\partial^{2}\vec{E}}{\partial t^{2}}=0
+\end{aligned}$$</span><!-- Has MathJax --><br>Meanwhile, in our college physics class, we’ve learned the one-dimensional wave equation by analyzing the movement of a spring:<br><span>$$\begin{aligned}
+\frac{\partial^{2}y}{\partial x^{2}}-a^{2}\frac{\partial^{2}y}{\partial t^{2}}=0\\
+(a=\frac{1}{v})
+\end{aligned}$$</span><!-- Has MathJax --><br>Therefore, we get the speed of electromagnetic wave in a vacuum:<br><span>$$\begin{aligned}
+v=\frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}\approx 3\times 10^{8} m/s
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>Maxwell: Isn’t it just similar to the speed of light that <a href="https://en.wikipedia.org/wiki/Hippolyte_Fizeau" target="_blank" rel="external"><strong>Hippolyte Fizeau</strong></a> measured ?! How can this happen?! What is exactly inside a vacuum??</p>
+<p>The results were:</p>
+<p>First, Maxwell prophesied that <strong>light is electromagnetic radiation</strong>. This was later proved to be right by <a href="https://en.wikipedia.org/wiki/Heinrich_Hertz" target="_blank" rel="external"><strong>Heinrich Hertz</strong></a> in 1888.</p>
+<p>Second, Maxwell’s thoughts facilitated the <a href="https://en.wikipedia.org/wiki/Aether_theories" target="_blank" rel="external"><strong>aether theories</strong></a>. This was later proved to be wrong by the <a href="https://en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment" target="_blank" rel="external"><strong>Michelson–Morley experiment</strong></a> in 1880s.</p>
+<p>As for how <a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank" rel="external"><strong>Albert Einstein</strong></a> solved the problems left by aether theories by using his <a href="https://en.wikipedia.org/wiki/Special_relativity" target="_blank" rel="external"><strong>special relativity</strong></a> in 1905, that’s another long story.</p>
+<p><img src="/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/einstein.jpg" alt=""></p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Liu,Wenkai. <em>Electromagnetic Fields and Electromagnetic Waves</em>. [M]. Beijing: BUPT Press, 2013.</li>
+<li>He,Xiaoxiang. <em>Engineering Electromagnetic Field</em>. [M]. Beijing: Publishing House of Electronics Industry, 2011.</li>
+<li>Bhag Singh Guru. <em>Electromagnetic Field Theory Fundamentals</em>, 2nd ed. [M]. Cambridge: Cambridge University Press, 2009.</li>
+<li><em>Maxwell’s Equations</em> [EB/OL]. <a href="http://www.maxwells-equations.com/" target="_blank" rel="external">http://www.maxwells-equations.com/</a>, 2016-03-25.</li>
+<li><em>Guokr</em> [EB/OL]. <a href="http://www.guokr.com/i/0867078073/" target="_blank" rel="external">http://www.guokr.com/i/0867078073/</a>, 2016-03-25.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-03-25.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-03-13-Electromagnetic-Field-Maxwell-s-Equations/emf%2001.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We have already learned something abo
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="electromagnetic-field" scheme="http://samlyu.github.io/tags/electromagnetic-field/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electromagnetic Field: Magnetostatics</title>
+    <link href="http://samlyu.github.io/2016/03/06/Electromagnetic-Field-Magnetostatics/"/>
+    <id>http://samlyu.github.io/2016/03/06/Electromagnetic-Field-Magnetostatics/</id>
+    <published>2016-03-05T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png" alt=""></p>
+<p>We have already learned something about <a href="http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/"><strong>electrostatics</strong></a> last times. Now we turn to focus on <a href="https://en.wikipedia.org/wiki/Magnetostatics" target="_blank" rel="external"><strong>magnetostatics</strong></a>.</p>
+<p>In history, for some reasons, although magnets and magnetism were known earlier, the study of magnetism was not going smoothly. Sometimes it was almost just analogy.</p>
+<p>First we also have a <a href="https://en.wikipedia.org/wiki/Coulomb%27s_law" target="_blank" rel="external"><strong>Coulomb’s law</strong></a>:$$|\vec{F}|=\frac{q_1 q_2}{4\pi\mu_0 r^2}$$</p>
+<p>Exactly the same equation we have in electrostatics, the differences are: <a href="https://en.wikipedia.org/wiki/Vacuum_permittivity" target="_blank" rel="external"><strong>vacuum permittivity</strong></a> is replaced by <a href="https://en.wikipedia.org/wiki/Vacuum_permeability" target="_blank" rel="external"><strong>vacuum permeability</strong></a>, and the charges are no longer electric charges but “magnetic charges” or “magnetic poles”, aka <a href="https://en.wikipedia.org/wiki/Magnetic_monopole" target="_blank" rel="external"><strong>magnetic monopoles</strong></a>. Later in 1824, <a href="https://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" target="_blank" rel="external"><strong>Siméon Denis Poisson</strong></a> created the first successful model of the magnetic field. In this model, a magnetic $\vec{H}$-field is produced by ‘magnetic poles’ and magnetism is due to small pairs of north/south magnetic poles. $\vec{H}$ is <strong>magnetic field strength</strong>. We also have the following equation: $$\vec{B}=\mu_0(\vec{H}+\vec{M})$$</p>
+<p>$\vec{B}$ is called <strong>magnetic field strength</strong>, $\vec{M}$ is called <strong>magnetization intensity</strong>. Just like  polarization, here we have <a href="https://en.wikipedia.org/wiki/Magnetization" target="_blank" rel="external"><strong>magnetization</strong></a>. Also, if the medium is <strong>linear</strong> and <strong>isotropic</strong>:<br><span>$$\begin{aligned}
+\vec{B}=\mu_0(\vec{H}+\chi_m\vec{H})=\mu_0 \mu_r \vec{H}=\mu \vec{H}
+\end{aligned}$$</span><!-- Has MathJax --><br>If we take a look back:<br><span>$$\begin{aligned}
+\vec{D}=(1+\chi)\varepsilon_0\vec{E}=\varepsilon_r\varepsilon_0 \vec{E}=\varepsilon \vec{E}
+\end{aligned}$$</span><!-- Has MathJax --><br>They are <strong>TOTALLY</strong> the same.</p>
+<p><strong>HOWEVER</strong>, those theories are all based on “magnetic poles”. <strong>Are they really exist?</strong> In 1785, <a href="https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb" target="_blank" rel="external"><strong>Charles-Augustin de Coulomb</strong></a> himself experimentally verified this and stated explicitly that the north and south poles cannot be separated. So what really produces magnetic force?</p>
+<p><img src="/images/2016-03-06-Electromagnetic-Field-Magnetostatics/cannotseparate.png" alt=""></p>
+<p>Three discoveries challenged this foundation of magnetism. First, in 1819, <a href="https://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted" target="_blank" rel="external"><strong>Hans Christian Ørsted</strong></a> discovered that <strong>an electric current generates a magnetic field encircling it</strong>. Then in 1820, <a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re" target="_blank" rel="external"><strong>André-Marie Ampère</strong></a> showed that <strong>parallel wires having currents</strong> in the same direction attract one another. Finally, <a href="https://en.wikipedia.org/wiki/Jean-Baptiste_Biot" target="_blank" rel="external"><strong>Jean-Baptiste Biot</strong></a> and <a href="https://en.wikipedia.org/wiki/F%C3%A9lix_Savart" target="_blank" rel="external"><strong>Félix Savart</strong></a> discovered the <a href="https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law" target="_blank" rel="external"><strong>Biot–Savart law</strong></a> in 1820, which correctly predicts the magnetic field around any current-carrying wire.</p>
+<p>Extending these experiments, Ampère published his own successful model of magnetism in 1825. In it, he showed the equivalence of electrical currents to magnets and proposed that magnetism is due to <strong>perpetually flowing loops of current</strong> instead of the <strong>dipoles of magnetic charge</strong> in Poisson’s model. This has the additional benefit of explaining <strong>why magnetic charge can not be isolated</strong>. Further, Ampère derived both <a href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_force_law" target="_blank" rel="external"><strong>Ampère’s force law</strong></a> describing the force between two currents and <a href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law" target="_blank" rel="external"><strong>Ampère’s law</strong></a>, which, like the Biot–Savart law, correctly described the magnetic field generated by a <strong>steady current</strong>. Also in this work, Ampère introduced the term <a href="https://en.wikipedia.org/wiki/Classical_electromagnetism" target="_blank" rel="external"><strong>electrodynamics</strong></a> to describe the relationship between electricity and magnetism.</p>
+<p><img src="/images/2016-03-06-Electromagnetic-Field-Magnetostatics/ampere.png" alt=""></p>
+<p>From our modern perspectives, <strong>unified theory</strong> is still fashionable. Ampère made a big step toward it.</p>
+<h4 id="a-Biot–Savart-Law"><a href="#a-Biot–Savart-Law" class="headerlink" title="a). Biot–Savart Law"></a>a). Biot–Savart Law</h4><p>In a vacuum:<br><span>$$\begin{aligned}
+\vec{B}=\int d\vec{B}=\frac{\mu_0}{4\pi}\int_{l&apos;}\frac{I&apos;dl&apos;\times(\vec{r}-\vec{r&apos;})}{|\vec{r}-\vec{r&apos;}|^3}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="b-Ampere’s-Circuital-Law"><a href="#b-Ampere’s-Circuital-Law" class="headerlink" title="b). Ampère’s Circuital Law"></a>b). Ampère’s Circuital Law</h4><p>In a vacuum:<br><span>$$\begin{aligned}
+\oint\vec{B} \cdot d\vec{l}=\mu_0\sum I
+\end{aligned}$$</span><!-- Has MathJax --><br>The direction of the current is related to the direction of the $\vec{B}$ circle, by using the <a href="https://en.wikipedia.org/wiki/Right-hand_rule" target="_blank" rel="external"><strong>right hand rule</strong></a>.</p>
+<p>In other mediums, we have to take <a href="https://en.wikipedia.org/wiki/Magnetization" target="_blank" rel="external"><strong>magnetization</strong></a> into account:<br><span>$$\begin{aligned}
+\oint\vec{H}\cdot d\vec{l}=I
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>The relationship of $\vec{B}$, $\vec{H}$, and $\vec{M}$ is correct, but we’d like to write it in a different form:<br><span>$$\begin{aligned}
+\vec{H}=\frac{\vec{B}}{\mu_0}-\vec{M}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="c-Fundamental-Equations"><a href="#c-Fundamental-Equations" class="headerlink" title="c). Fundamental Equations"></a>c). Fundamental Equations</h4><p>Integral form:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{B} \cdot d\vec{S}=0\\
+&amp;\oint \vec{H} \cdot d\vec{l}=I\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Differential form:<br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla \cdot \vec{B}=0\\
+&amp;\nabla \times \vec{H}=\vec{J}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Now we know that static magnetic fields are <strong>rotational</strong>, and <strong>divergence-free</strong>.</p>
+<h4 id="d-Magnetic-Potential"><a href="#d-Magnetic-Potential" class="headerlink" title="d). Magnetic Potential"></a>d). Magnetic Potential</h4><p>Now we are going to define <a href="https://en.wikipedia.org/wiki/Magnetic_potential" target="_blank" rel="external"><strong>magnetic potential</strong></a> to measure the rotation of a static magnetic field, just like what we did in electric potential.<br>$$\vec{B}=\nabla\times\vec{A}$$<br>$$\Psi=\int_S \vec{B} \cdot d\vec{S}=\int_S (\nabla \times \vec{A})\cdot d\ vec{S}=\oint_L \vec{A}\cdot d\vec{l}$$<br>This is not enough, we also want to define <a href="https://en.wikipedia.org/wiki/Magnetic_potential" target="_blank" rel="external"><strong>magnetic scholar potential</strong></a> by analogy.<br>$$\vec{H}=-\nabla \varphi_m$$</p>
+<h4 id="e-Boundary-Conditions"><a href="#e-Boundary-Conditions" class="headerlink" title="e). Boundary Conditions"></a>e). Boundary Conditions</h4><p>Near to the boundary line of two static electric fields:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{B}_{2n}=\vec{B}_{1n}\\
+&amp;\vec{H}_{1t}-\vec{H}_{2t}=\vec{K}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>$\vec{K}$ is the <strong>linear current density</strong>.<br>Represented with magnetic potential, if the field is <strong>axisymmetric</strong>:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{A_1}=\vec{A_2}\\
+&amp;\frac{1}{\mu_1}\frac{\partial \vec{A_1}}{\partial n}-\frac{1}{\mu_2}\frac{\partial \vec{A_2}}{\partial n}=\vec{K}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Represented with magnetic scholar potential:<br><span>$$\left\{
+\begin{aligned}
+&amp;\varphi_{m1}=\varphi_{m2}\\
+&amp;\mu_1 \frac{\partial \varphi_{m1}}{\partial n}=\mu_2 \frac{\partial \varphi_{m2}}{\partial n}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h4 id="f-Basic-Questions"><a href="#f-Basic-Questions" class="headerlink" title="f). Basic Questions"></a>f). Basic Questions</h4><p>Almost the same in electrostatics.<br>How can we know the <strong>effect</strong> of a field if we already knew something about the source? How can we know something about a <strong>source</strong> if we already knew the effect of the field it excited?<br>Answers:</p>
+<ol>
+<li>Biot–Savart law ( for continuous objects ).</li>
+<li>Ampère’s circuital law ( for electric wires ).</li>
+<li>Boundary conditions, along with <strong>Poisson’s equation</strong>: $\nabla^2\cdot\vec{A}=-\mu\vec{J}$, or <strong>Laplace’s equation</strong>: $\nabla^2\varphi_m=0$ in vector form ( in a <a href="https://en.wikipedia.org/wiki/Force-free_magnetic_field" target="_blank" rel="external"><strong>force-free magnetic field</strong></a> ).</li>
+<li><a href="https://en.wikipedia.org/wiki/Method_of_images" target="_blank" rel="external"><strong>Method of images</strong></a> ( for different mediums ).<h4 id="g-Energy"><a href="#g-Energy" class="headerlink" title="g). Energy"></a>g). Energy</h4>Self inductance: $\Psi=LI$</li>
+</ol>
+<p>Mutual inductance: $\Psi=MI$</p>
+<p>For coils:<br><span>$$\begin{aligned}
+W_m=\frac{1}{2}\sum_{i=1}^{n} I_i \Psi_i
+\end{aligned}$$</span><!-- Has MathJax --><br>For magnetic bodies: $$W_m=\frac{1}{2}\int_V \vec{H}\cdot\vec{B}dV$$</p>
+<p><strong>That’s all.</strong></p>
+<p><strong>HOWEVER…</strong> what if magnetic monopole does exist and someone finds it out?</p>
+<p><img src="/assets/2016-03-06-Electromagnetic-Field-Magnetostatics/TBBTS03E01clip.JPG" alt="The Big Bang Theory, S03E01"></p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Liu,Wenkai. <em>Electromagnetic Fields and Electromagnetic Waves</em>. [M]. Beijing: BUPT Press, 2013.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-03-06.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-03-06-Electromagnetic-Field-Magnetostatics/magnetic1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We have already learned something about &lt;
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="electromagnetic-field" scheme="http://samlyu.github.io/tags/electromagnetic-field/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electromagnetic Field: Electrostatics</title>
+    <link href="http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/"/>
+    <id>http://samlyu.github.io/2016/03/03/Electromagnetic-Field-Electrostatics/</id>
+    <published>2016-03-02T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png" alt=""></p>
+<p>What are we trying to figure out when we talk about a force field?</p>
+<ol>
+<li>What are the force lines <strong>look like</strong>? Diverging or twisting? How can we <strong>measure</strong> them?</li>
+<li>What would happen if two fields <strong>connected together</strong>?</li>
+<li>How can we know the <strong>effect</strong> of a field if we already knew something about the source? How can we know something about a <strong>source</strong> if we already knew the effect of the field it excited?</li>
+<li>How about the <strong>energy</strong> or something else?</li>
+</ol>
+<p>By solving the above questions no.1 we can get some fundamental equations of the field. Questions no.3 are the basic problems that we need some solutions and questions no.1 and no.2 are of help. As for question no.4, that’s something matters in practical applications.</p>
+<p>We can do those with our <a href="http://samlyu.github.io/2016/02/04/Electromagnetic-Field-Vector-Analysis/"><strong>mathematical tools</strong></a>. However, every physics issue has to be started with some experiments. How much is the <strong>force</strong>? That is question no.0.</p>
+<p>Now that I cannot demonstrate all the laws and formulas myself, I am going to list some pioneer scientists’ discoveries of three kinds of basic static electromagnetic fields below, and two of them are parts of <a href="https://en.wikipedia.org/wiki/Electrostatics" target="_blank" rel="external"><strong>electrostatics</strong></a>. What I can fully understand is that, these formulas are of simplicity and elegance undoubtedly.</p>
+<h2 id="1-Static-Electric-field"><a href="#1-Static-Electric-field" class="headerlink" title="1. Static Electric field"></a>1. Static Electric field</h2><p>The static electric field is produced by <strong>stationary charges</strong>, positive ones or negative ones.</p>
+<h4 id="a-Coulomb’s-Law"><a href="#a-Coulomb’s-Law" class="headerlink" title="a). Coulomb’s Law"></a>a). Coulomb’s Law</h4><p>First published by <a href="https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb" target="_blank" rel="external"><strong>Charles Augustin de Coulomb</strong></a> in 1784.<br><span>$$\begin{aligned}
+\vec{F_{1\to 2}}=\frac{q_{1}q_{2}}{4\pi \varepsilon_{0} |\vec{r_{2}}-\vec{r_{1}}|^2}\hat{e_{12}}=\frac{q_1 q_2(\vec{r_2}-\vec{r_1})}{4\pi \varepsilon_0 |\vec{r_2}-\vec{r_1}|^3}\\
+\vec{F_{2\to 1}}=\frac{q_{1}q_{2}}{4\pi \varepsilon_{0} |\vec{r_{1}}-\vec{r_{2}}|^2}\hat{e_{21}}=\frac{q_1 q_2(\vec{r_1}-\vec{r_2})}{4\pi \varepsilon_0 |\vec{r_1}-\vec{r_2}|^3}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="b-Electric-Field-Intensity-vec-E"><a href="#b-Electric-Field-Intensity-vec-E" class="headerlink" title="b). Electric Field Intensity ( $\vec{E}$ )"></a>b). Electric Field Intensity ( $\vec{E}$ )</h4><p>The electric field $\vec{E}$ at a given point is defined as the (vectorial) force $\vec{F}$ that would be exerted on a stationary <a href="https://en.wikipedia.org/wiki/Test_particle" target="_blank" rel="external"><strong>test particle</strong></a> of unit charge by electromagnetic forces ( i.e. the Lorentz force ). A particle of charge q would be subject to a force: $$\vec{F}=q\cdot\vec{E}$$</p>
+<h4 id="c-Fundamental-Equations"><a href="#c-Fundamental-Equations" class="headerlink" title="c). Fundamental Equations"></a>c). Fundamental Equations</h4><p>By using the mathematical tools we obtained last time ( flux, circulation, divergence, curl ), we are able to get some fundamental equations of static electric field: <a href="https://en.wikipedia.org/wiki/Gauss%27s_law" target="_blank" rel="external"><strong>Gauss’s flux theorem</strong></a> and <strong>circuital theorem of static electric field</strong>, in both integral form and differential form.<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{E}\cdot d\vec{S}=\frac{Q}{\varepsilon_0}\\
+&amp;\oint_L \vec{E}\cdot d\vec{l}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}\\
+&amp;\nabla\times\vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<p><strong>However</strong>, because of <a href="https://en.wikipedia.org/wiki/Polarization" target="_blank" rel="external"><strong>polarization</strong></a>, those above formulas can only be used in a <strong>vacuum</strong>, where has a simple <a href="https://en.wikipedia.org/wiki/Permittivity" target="_blank" rel="external"><strong>permittivity</strong></a>: $\varepsilon_0$.</p>
+<p>We have to take <a href="https://en.wikipedia.org/wiki/Polarization_density" target="_blank" rel="external"><strong>polarization density</strong></a> $\vec{P}$ into account. We define <a href="https://en.wikipedia.org/wiki/Electric_displacement_field" target="_blank" rel="external"><strong>electric displacement</strong></a> $\vec{D}$ as:<br>$$\vec{D}=\varepsilon_0 \vec{E} + \vec{P}$$<br>( As for why it is called “displacement”, we will talk about it next time. )<br>If the <strong>medium</strong> is not only <strong>linear</strong> but also <strong>isotropic</strong>:<br>$$\vec{P}=\chi \varepsilon_0 \vec{E}$$<br>$$\vec{D}=(1+\chi)\varepsilon_0\vec{E}=\varepsilon_r\varepsilon_0 \vec{E}=\varepsilon \vec{E}$$<br>So here are the fundamental equations (final version):<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{D}\cdot d\vec{S}=\int_V \rho_f dV=Q_f\\
+&amp;\oint_L \vec{E}\cdot d\vec{l}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br><span>$$\left\{
+\begin{aligned}
+&amp;\nabla\cdot\vec{D}=\rho_f\\
+&amp;\nabla\times\vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<p>Now we have already known about the force and what the force lines look like: The static electric field is an <strong>irrotational field</strong>.</p>
+<h4 id="d-Electric-Potential"><a href="#d-Electric-Potential" class="headerlink" title="d). Electric Potential"></a>d). Electric Potential</h4><p>Since the curl of a static electric field equals to zero, we can define a variable to measure the divergence of the field. Imagine a <strong>waterfall</strong>, we now know the velocity of the water, how can we get the height of each point in this “waterfall field”? BTW, we want the height of ground remain zero.<br>$$\vec{E}=-\nabla\varphi$$</p>
+<h4 id="e-Boundary-Conditions"><a href="#e-Boundary-Conditions" class="headerlink" title="e). Boundary Conditions"></a>e). Boundary Conditions</h4><p>Near to the boundary line of two static electric fields:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{E}_{1t}=\vec{E}_{2t}\\
+&amp;\vec{D}_{2n}-\vec{D}_{1n}=\sigma_f\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Represented with electric potential:<br><span>$$\left\{
+\begin{aligned}
+&amp;\varphi_1=\varphi_2\\
+&amp;\varepsilon_2\frac{\partial\varphi_2}{\partial n}-\varepsilon_1\frac{\partial\varphi_1}{\partial n}=-\sigma_f\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>If both of the mediums are linear and isotropic, here we have the law of reflection:<br>$$\frac{tan\alpha_1}{tan\alpha_2}=\frac{\varepsilon_1}{\varepsilon_2}$$</p>
+<h4 id="f-Basic-Questions"><a href="#f-Basic-Questions" class="headerlink" title="f). Basic Questions"></a>f). Basic Questions</h4><p>How can we know the <strong>effect</strong> of a field if we already knew something about the source? How can we know something about a <strong>source</strong> if we already knew the effect of the field it excited?<br>Answers:</p>
+<ol>
+<li>Coulomb’s law and $\vec{E}$.</li>
+<li>Coulomb’s law and $\vec{E}$ and integration ( for continuous objects ).</li>
+<li>Gauss’s flux theorem ( for symmetrical objects ).</li>
+<li>Boundary conditions, along with <a href="https://en.wikipedia.org/wiki/Poisson%27s_equation" target="_blank" rel="external"><strong>Poisson’s equation</strong></a>: $\nabla^2\varphi=-\frac{\rho_f}{\varepsilon}$, or <a href="https://en.wikipedia.org/wiki/Laplace%27s_equation" target="_blank" rel="external"><strong>Laplace’s equation</strong></a>: $\nabla^2\varphi=0$.</li>
+<li><a href="https://en.wikipedia.org/wiki/Method_of_image_charges" target="_blank" rel="external"><strong>Method of image charges</strong></a> ( for different mediums ).</li>
+</ol>
+<h4 id="g-Energy"><a href="#g-Energy" class="headerlink" title="g). Energy"></a>g). Energy</h4><p>Separated charges:<br><span>$$\begin{aligned}
+&amp;W=\frac{1}{2}\sum^{n}_{i=1} q_i \varphi_i\\
+&amp;\varphi_i=\sum^{n}_{j=1,j\neq i}\varphi_{ij}\\
+\end{aligned}$$</span><!-- Has MathJax --><br>Continuous charged body:<br>$$W=\frac{1}{2}\int_V \rho\varphi dV=\frac{1}{2}\int_V \vec{D}\cdot\vec{E}dV$$</p>
+<h2 id="2-Steady-Electric-Field"><a href="#2-Steady-Electric-Field" class="headerlink" title="2. Steady Electric Field"></a>2. Steady Electric Field</h2><p>We now know what would happen if we have some stationary charges. Next, we want to make them move, say, in a circuit. Although they are moving, the distribution of the charges is invariable. In that situation, we get a steady electric field.</p>
+<p><img src="/images/2016-03-03-Electromagnetic-Field-Electrostatics/current1.png" alt=""></p>
+<h4 id="a-Current-Density"><a href="#a-Current-Density" class="headerlink" title="a). Current Density"></a>a). Current Density</h4><p>We can no longer regard currents as constants now. <a href="https://en.wikipedia.org/wiki/Current_density" target="_blank" rel="external"><strong>Current density</strong></a> is defined as a <strong>vector</strong> whose magnitude is the electric current <strong>per cross-sectional area</strong> at a given point in space.<br><span>$$\begin{aligned}
+&amp;\vec{J}=\rho \vec{\nu}\\
+&amp;I=\int_S \vec{J}\cdot d\vec{S}\\
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h4 id="b-Ohm’s-Law-Differential-Form"><a href="#b-Ohm’s-Law-Differential-Form" class="headerlink" title="b). Ohm’s Law: Differential Form"></a>b). Ohm’s Law: Differential Form</h4><p>If the medium is linear and isotropic:<br><span>$$\begin{aligned}
+\vec{J}=\gamma\vec{E}
+\end{aligned}$$</span><!-- Has MathJax --><br>$\gamma$ is the <a href="https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity" target="_blank" rel="external"><strong>electrical conductivity</strong></a> of the medium.</p>
+<h4 id="c-KCL-Integral-amp-Differential-Form"><a href="#c-KCL-Integral-amp-Differential-Form" class="headerlink" title="c). KCL: Integral &amp; Differential Form"></a>c). KCL: Integral &amp; Differential Form</h4><p>We have already learned that the quantity of electric charges is conserved. Let’s consider a section of a electric wire. The current discharging from the section should equals to the decrement rate of charges.<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{J}\cdot d\vec{S}=-\int_V \frac{\partial\rho}{\partial t}dV\\
+&amp;\nabla \cdot \vec{J}=-\frac{\partial\rho}{\partial t}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>The above equations are appropriate for any electric field. As for steady electric field, the equations become:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{J}\cdot d\vec{S}=0\\
+&amp;\nabla \cdot \vec{J}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h4 id="d-Fundamental-Equations"><a href="#d-Fundamental-Equations" class="headerlink" title="d). Fundamental Equations"></a>d). Fundamental Equations</h4><p>Steady electric fields are not only <strong>irrotational</strong>, but also <strong>divergence-free</strong>.<br>Integral form:<br><span>$$\left\{
+\begin{aligned}
+&amp;\oint_S \vec{J}\cdot d\vec{S}=0\\
+&amp;\oint_l \vec{E}\cdot d\vec{l}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Differential form:<br><span>$$\left\{
+\begin{aligned}
+\nabla \cdot \vec{J}=0\\
+\nabla \times \vec{E}=0\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --></p>
+<h4 id="e-Boundary-Conditions-1"><a href="#e-Boundary-Conditions-1" class="headerlink" title="e). Boundary Conditions"></a>e). Boundary Conditions</h4><p>Near to the boundary line of two steady electric fields:<br><span>$$\left\{
+\begin{aligned}
+&amp;\vec{E}_{1t}=\vec{E}_{2t}\\
+&amp;\vec{J}_{1n}=\vec{J}_{2n}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Represented with electric potential:<br><span>$$\left\{
+\begin{aligned}
+&amp;\varphi_1=\varphi_2\\
+&amp;\gamma_1\frac{\partial\varphi_1}{\partial n}=\gamma_2\frac{\partial\varphi_2}{\partial n}\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>If both of the mediums are linear and isotropic, here we have the law of reflection:<br>$$\frac{tan\alpha_1}{tan\alpha_2}=\frac{\gamma_1}{\gamma_2}$$</p>
+<p><strong>That’s all…</strong> The calculations are quite exhausting. However, you can see the artistry.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Liu,Wenkai. <em>Electromagnetic Fields and Electromagnetic Waves</em>. [M]. Beijing: BUPT Press, 2013.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-03-05.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-03-03-Electromagnetic-Field-Electrostatics/staticfield1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;What are we trying to figure out when 
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="electromagnetic-field" scheme="http://samlyu.github.io/tags/electromagnetic-field/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electromagnetic Field: Vector Analysis</title>
+    <link href="http://samlyu.github.io/2016/02/04/Electromagnetic-Field-Vector-Analysis/"/>
+    <id>http://samlyu.github.io/2016/02/04/Electromagnetic-Field-Vector-Analysis/</id>
+    <published>2016-02-03T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<span>$$\begin{aligned}
+&amp; Principle\;No.1:\\
+&amp; Simplicity\;is\;the\;ultimate\;sophistication.\\
+&amp; ---\;Leonardo\;Da\;Vinci
+\end{aligned}$$</span><!-- Has MathJax -->
+<p><img src="/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/vectorfield.jpg" alt=""></p>
+<p>An <a href="https://en.wikipedia.org/wiki/Electromagnetic_field" target="_blank" rel="external"><strong>electromagnetic field</strong></a> (also EMF or EM field) is a physical field produced by <strong>electrically charged objects</strong>. It <strong>affects</strong> the behavior of <strong>charged objects</strong> in the vicinity of the field.</p>
+<ul>
+<li>Just like that you are a person with some mass (or weight), let’s say 130 lbs (I’m sorry if you are much heavier than that), you will produce a gravity field and the sun will be dragged a little bit nearer to you. Actually the EMF works just like that, but a little bit different.</li>
+</ul>
+<p>The electromagnetic field extends indefinitely throughout space and describes the <a href="https://en.wikipedia.org/wiki/Electromagnetism" target="_blank" rel="external"><strong>electromagnetic interaction</strong></a>. It is one of <strong>the four fundamental forces of nature</strong> (the others are gravitation, weak interaction and strong interaction). If you are interested in these forces especially the latter two, I highly recommend <a href="http://www.amazon.com/God-Particle-Universe-Answer-Question/dp/0618711686/ref=asap_bc?ie=UTF8" target="_blank" rel="external"><strong>Dr.Leon Lederman’s book:</strong> <strong><em>The God Particle</em></strong></a>. While <strong>here</strong> we only focus our eyes on the EMF, and in <a href="https://en.wikipedia.org/wiki/Classical_physics" target="_blank" rel="external"><strong>classical physics</strong></a>: we just think the EMF as a smooth, continuous field.</p>
+<p>The field can be viewed as the <strong>combination</strong> of an <strong>electric field</strong> and a <strong>magnetic field</strong>. The electric field is produced by <strong>stationary charges</strong>, and the magnetic field by <strong>moving charges (currents)</strong>; these two are often described as the <strong>sources</strong> of the field. The way in which charges and currents interact with the electromagnetic field is described by <strong>Maxwell’s equations</strong> and <strong>the Lorentz force law</strong>. Actually the Maxwell’s equations are the destinations of this lesson here…</p>
+<h2 id="1-Vector-Field-Flux-amp-amp-Circulation"><a href="#1-Vector-Field-Flux-amp-amp-Circulation" class="headerlink" title="1. Vector Field: Flux &amp;&amp; Circulation"></a>1. Vector Field: Flux &amp;&amp; Circulation</h2><p>What are we talking about when we talk about a vector field?</p>
+<p>How can we describe a vector field in a visualized way?</p>
+<p>“<a href="https://en.wikipedia.org/wiki/Field_line" target="_blank" rel="external"><strong>Field line</strong></a>.” Said <a href="https://en.wikipedia.org/wiki/Michael_Faraday" target="_blank" rel="external"><strong>Michael Faraday</strong></a>.</p>
+<p><img src="/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/fieldline1.png" alt=""></p>
+<p>Faraday: See? those bits of iron around the bar magnet proved me right. :)</p>
+<p><img src="/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/fieldline2.png" alt=""></p>
+<p>Very good indeed… but not <strong>precise</strong> enough. These visible lines are just a small part of the  infinite lines excited by the sources of these fields. Maybe a more mathematical way is better.</p>
+<p>Actually, if we classify these force lines, there are two kinds: one is <strong>divergent</strong>, the other is <strong>vortical</strong>.</p>
+<p>In fact, when we are “measuring” a vector field, the proper mathematical way is exactly to “count” how “many” force lines are going through an <a href="https://en.wikipedia.org/wiki/Infinitesimal" target="_blank" rel="external"><strong>infinitesimal</strong></a> surface ( <a href="https://en.wikipedia.org/wiki/Flux" target="_blank" rel="external"><strong>flux</strong></a> ) &amp;&amp; running along an infinitesimal closed curve ( <a href="https://en.wikipedia.org/wiki/Circulation" target="_blank" rel="external"><strong>circulation</strong></a> ).</p>
+<p>Apparently, if we take physical truth into account, these infinitesimal surfaces and infinitesimal closed curves must have <strong>directions</strong>. For example, if our surface is a closed surface which surrounds the source of our field, say, a positive charge, so we have to orient the surface with <strong>a normal vector pointing always outwards</strong>. Another example: if our source is at the center of our closed curve, we have to use the almighty <a href="https://en.wikipedia.org/wiki/Right-hand_rule" target="_blank" rel="external"><strong>right-hand rule</strong></a> to judge the positive direction of our curve.</p>
+<p>Here are the definitions: Let’s assume that we have a “spring water source”, the water is incompressible and its density is 1. The velocity field of the “spring water” is $\vec{v}(x,y,z)$, where: $$\vec{V}(x,y,z)=P(x,y,z)\vec{i}+Q(x,y,z)\vec{j}+R(x,y,z)\vec{k}$$<br>So:<br><strong>Flux:</strong><br><span>$$\begin{aligned}
+\Phi=\int_{\Omega}\vec{V}d\vec{S}=\iint_{\Sigma}\vec{V}\cdot\vec{n}dS=\iint_{\Sigma}(Pcos\alpha + Qcos\beta + Rcos\gamma)dS
+\end{aligned}$$</span><!-- Has MathJax --><br>If $\Sigma$ is a closed surface and its normal outward vector’s direction is its positive direction, then:<br><span>$$\begin{aligned}
+\Phi=\iint_{\Sigma}Pdydz+Qdzdx+Rdxdy
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<ul>
+<li>If $\Phi&gt;0$, then there is a equivalent positive source inside.</li>
+<li>If $\Phi&lt;0$, then there is a equivalent negative source inside.</li>
+<li>If $\Phi=0$, then there is equivalently no source inside.</li>
+</ul>
+<p><strong>Circulation:</strong><br><span>$$\begin{aligned}
+\Gamma=\oint_{L}\vec{V}d\vec{l}=\oint_{L}\vec{V}\cdot\vec{\tau}ds=\oint_{L}(Pcos\lambda+Qcos\mu+Rcos\nu)ds
+\end{aligned}$$</span><!-- Has MathJax --><br>Now we can describe a vector field in integral form.</p>
+<h2 id="2-Vector-Operators-Divergence-amp-amp-Curl"><a href="#2-Vector-Operators-Divergence-amp-amp-Curl" class="headerlink" title="2. Vector Operators, Divergence &amp;&amp; Curl"></a>2. Vector Operators, Divergence &amp;&amp; Curl</h2><p>Now let’s think of differentiation.</p>
+<p>Don’t you think vector field is a perfect stage for differentiation? Maybe differentiation was born for it, isn’t it <a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank" rel="external"><strong>Sir Newton</strong></a>?</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Divergence_theorem" target="_blank" rel="external"><strong>Gauss’s theorem</strong></a>:<br><span>$$\begin{aligned}
+\Phi=\iiint_{\Omega}(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})dxdydz
+\end{aligned}$$</span><!-- Has MathJax --><br>If we shrink our surface $\Sigma$ until it becomes an infinitesimal point.<br><span>$$\begin{aligned}
+\lim_{\Omega\to M}\frac{\Phi}{V}=\lim_{\Omega\to M}\frac{1}{V}\iiint_{\Omega}(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})dxdydz=(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})_{M}
+\end{aligned}$$</span><!-- Has MathJax --><br>This is the <a href="https://en.wikipedia.org/wiki/Divergence" target="_blank" rel="external"><strong>divergence</strong></a> of the vector field.</p>
+<p>It’s a little bit too inconvenient to write something like $(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})_{M}$, so we use a <a href="https://en.wikipedia.org/wiki/Vector_operator" target="_blank" rel="external"><strong>vector operator</strong></a> to rewrite these formulas.<br><span>$$\begin{aligned}
+div\vec{V}=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}=\nabla\cdot\vec{V}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>Now let’s come to <a href="https://en.wikipedia.org/wiki/Curl" target="_blank" rel="external"><strong>curl</strong></a> ( or <a href="https://en.wikipedia.org/wiki/Vorticity" target="_blank" rel="external"><strong>vorticity</strong></a> ).</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Stokes%27_theorem" target="_blank" rel="external"><strong>Stokes’ theorem</strong></a>:<br><span>$$\begin{aligned}
+\Gamma=\iint_{\Sigma}(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z})dydz+(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x})dzdx+(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})dxdy
+\end{aligned}$$</span><!-- Has MathJax --><br>So, the vector $(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x},\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})$ is defined as the <strong>curl</strong> of the vector field.</p>
+<p>It’s really hard to be memorized， isn’t it?</p>
+<p><img src="/images/2016-02-04-Electromagnetic-Field-Vector-Analysis/mathalert.jpg" alt=""></p>
+<p>Fortunately we have already learned some linear algebra.<br><span>$$\begin{aligned}
+&amp; curl\vec{V}=(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x},\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})\\
+&amp; =  
+\left|\begin{array}{cccc}   
+    \vec{i} &amp; \vec{j} &amp; \vec{k} \\   
+    \frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z}\\
+    P &amp; Q &amp; R   
+\end{array}\right|   
+=\nabla\times\vec{V}
+\end{aligned}$$</span><!-- Has MathJax --><br>WELL DONE :)</p>
+<h2 id="3-Scalar-Field-Gradient"><a href="#3-Scalar-Field-Gradient" class="headerlink" title="3. Scalar Field: Gradient"></a>3. Scalar Field: Gradient</h2><p>Now let’s look back to scalar field. Much easier aren’t they?</p>
+<p>In fact, a scalar field is just like a mountain, different places ( coordinates ) have different heights ( coordinate values ). So if we are on the top of the mountain, what really matters to us is in which directions can we get the top speed to get down the mountain ( maybe rolling down the mountain :) ), and what is the speed?</p>
+<p>Sir Issac Newton has told us how to get the answer: <strong>derivation!</strong></p>
+<p><a href="https://en.wikipedia.org/wiki/Gradient" target="_blank" rel="external"><strong>Gradient</strong></a>:<br><span>$$\begin{aligned}
+gradf=\frac{\partial f}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}=\nabla f
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<h2 id="4-Some-Special-Vector-Fields-amp-amp-Helmholtz’s-Theorem-amp-amp-Two-Formulas"><a href="#4-Some-Special-Vector-Fields-amp-amp-Helmholtz’s-Theorem-amp-amp-Two-Formulas" class="headerlink" title="4. Some Special Vector Fields &amp;&amp; Helmholtz’s Theorem &amp;&amp; Two Formulas"></a>4. Some Special Vector Fields &amp;&amp; Helmholtz’s Theorem &amp;&amp; Two Formulas</h2><p>What would happen if the divergence or curl of a vector field equal to zero?</p>
+<ul>
+<li>If $\nabla\cdot\vec{V}=0$, there is no “diverging source” inside the field. <strong>Actually, no electric charges.</strong></li>
+<li>If $\nabla\times\vec{V}=0$,then there is no “helical source” inside the field. <strong>Actually, no electric currents.</strong></li>
+</ul>
+<p>And <a href="https://en.wikipedia.org/wiki/Helmholtz%27s_theorems" target="_blank" rel="external"><strong>Helmholtz’s theorem</strong></a> tells us why are these 3 values: gradient, divergence and curl, so important. Because arbitrary vector field $\vec{F}(\vec{r})$ can be described like this:<br><span>$$\begin{aligned}
+\vec{F}(\vec{r})=-\nabla u(\vec{r})+\nabla\times\vec{A}(\vec{r})
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>Also, here are two important formulas:<br><span>$$\begin{aligned}
+\nabla\times\nabla u = 0\\
+\nabla\cdot(\nabla\times\vec{A})=0
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>You can understand these formulas by imagining the force lines.</p>
+<h2 id="5-Summary"><a href="#5-Summary" class="headerlink" title="5. Summary"></a>5. Summary</h2><ul>
+<li>Integral form: flux, circulation;</li>
+<li>Differential form: divergence, curl, gradient.</li>
+</ul>
+<p><strong>Later, we will use these mathematical tools to analysis EMF.</strong></p>
+<p><strong>BY THE WAY</strong>, the calculation formulas of gradient, curl and gradient above are just appropriate for <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system" target="_blank" rel="external"><strong>rectangular coordinate system</strong></a>. In other system like <a href="https://en.wikipedia.org/wiki/Spherical_coordinate_system" target="_blank" rel="external"><strong>spherical coordinate system</strong></a> or <a href="https://en.wikipedia.org/wiki/Cylindrical_coordinate_system" target="_blank" rel="external"><strong>cylindrical coordinate system</strong></a>, the formulas are different.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Liu,Wenkai. <em>Electromagnetic Fields and Electromagnetic Waves</em>. [M]. Beijing: BUPT Press, 2013.</li>
+<li>Department of Mathematics, Tongji University, <em>Advanced Mathematics</em>, 6th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-02-09.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;span&gt;$$\begin{aligned}
+&amp;amp; Principle\;No.1:\\
+&amp;amp; Simplicity\;is\;the\;ultimate\;sophistication.\\
+&amp;amp; ---\;Leonardo\;Da\;Vinci
+\end{
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="electromagnetic-field" scheme="http://samlyu.github.io/tags/electromagnetic-field/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Birthday Again</title>
+    <link href="http://samlyu.github.io/2016/01/31/Birthday-Again/"/>
+    <id>http://samlyu.github.io/2016/01/31/Birthday-Again/</id>
+    <published>2016-01-30T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-01-31-Birthday-Again/birthday.png" alt=""></p>
+<p>Birthday again - It’s my 20th.<br>I’d like to share this song with you.</p>
+<embed src="http://music.163.com/style/swf/widget.swf?sid=4237846&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all">
+
+<p>Alternative link form YouTube:<br><a href="https://www.youtube.com/watch?v=9DqK2PkFgtw" target="_blank" rel="external">Comfortably Numb - Pink Floyd - The Wall (better sound n image)</a></p>
+<p><pre><code>The child is grown<br>The dream is gone<br>…<br>I have become comfortably numb</code></pre><br>Since high school, I have been feeling like this.<br>And now,</p>
+<p><pre><code>There is no pain you are receding</code></pre><br>You taught me this.</p>
+<p>Others are always of higher level. They are smarter. They are stronger. They are talented. They are skillful. They are sharp. I dared not to speak. I was afraid of facing awkward situations: I was “of nonchalance”. My failure of the College Entrance Exam seemed reasonable. I was learning bad. I deserved that.</p>
+<p><pre><code>I caught a fleeting glimpse<br>Out of the corner of my eye</code></pre><br>Now my future is unfolding. In this low-ranked college I am facing opportunities and frustrations. Disappointment is unavoidable, while the future is still appealing to me.</p>
+<p>What is happening in 3 years?</p>
+<p><pre><code>A distant ship, smoke on the horizon</code></pre><br>Happy birthday to myself again. And good day to you all.</p>
+<p>P.S. Enjoy the guitar solo.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-01-31-Birthday-Again/birthday.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Birthday again - It’s my 20th.&lt;br&gt;I’d like to share this song wi
+    
+    </summary>
+    
+      <category term="About" scheme="http://samlyu.github.io/categories/About/"/>
+    
+    
+      <category term="miscellaneous" scheme="http://samlyu.github.io/tags/miscellaneous/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Circuit Analysis Pt.3</title>
+    <link href="http://samlyu.github.io/2016/01/29/Circuit-Analysis-Pt-3/"/>
+    <id>http://samlyu.github.io/2016/01/29/Circuit-Analysis-Pt-3/</id>
+    <published>2016-01-28T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/coverpic.png" alt=""></p>
+<p>We have already solve simple <strong>DC resistive circuit</strong> problems and <strong>sinusoidal AC circuit</strong> problems ( in <a href="http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/"><strong>Circuit Analysis Pt.1</strong></a> &amp;&amp; <a href="http://samlyu.github.io/2016/01/28/Circuit-Analysis-Pt-2/"><strong>Circuit Analysis Pt.2</strong></a> ), now we need some ultimate mathematical tricks to solve all the circuit problems with <strong>periodic voltage sources</strong> and <strong>aperiodic voltage sources</strong>.</p>
+<h2 id="1-Fourier-Series"><a href="#1-Fourier-Series" class="headerlink" title="1. Fourier Series"></a>1. Fourier Series</h2><p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/Fourier.png" alt=""></p>
+<p>A <strong>Fourier series</strong> is a way to represent a wave-like function as the sum of simple sine waves. More formally, it decomposes any periodic function or periodic signal into the sum of a (possibly infinite) set of <strong>simple oscillating functions</strong>, namely sines and cosines (or, equivalently, complex exponentials). The Fourier series is named in honor of <a href="https://en.wikipedia.org/wiki/Joseph_Fourier" target="_blank" rel="external"><strong>Jean-Baptiste Joseph Fourier</strong></a> (1768–1830), who made important contributions to the study of <strong>trigonometric series</strong>, after preliminary investigations by <a href="https://en.wikipedia.org/wiki/Leonhard_Euler" target="_blank" rel="external"><strong>Leonhard Euler</strong></a>, <a href="https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert" target="_blank" rel="external"><strong>Jean le Rond d’Alembert</strong></a>, and <a href="https://en.wikipedia.org/wiki/Daniel_Bernoulli" target="_blank" rel="external"><strong>Daniel Bernoulli</strong></a>.</p>
+<p><strong>Definition:</strong><br><br><br>$f(x)$ is a continuous periodic function. $2l$ is its period length.<br><span>$$\begin{aligned}
+f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_{n} cos \frac{n \pi x}{l}+b_{n} sin \frac{n \pi x}{l})
+\end{aligned}$$</span><!-- Has MathJax --><br>Where:<br><span>$$\left\{
+\begin{aligned}
+a_{n}=\frac{1}{l}\int_{-l}^{l}f(x)cos \frac{n \pi x}{l} dx\\
+b_{n}=\frac{1}{l}\int_{-l}^{l}f(x)sin \frac{n \pi x}{l} dx\\
+\end{aligned}
+\right.$$</span><!-- Has MathJax --><br>Now we can use phasor method and <a href="https://en.wikipedia.org/wiki/Superposition_theorem" target="_blank" rel="external"><strong>superposition theorem</strong></a> to solve these circuit problems.</p>
+<h2 id="2-Laplace-Transform-The-Theorem"><a href="#2-Laplace-Transform-The-Theorem" class="headerlink" title="2. Laplace Transform - The Theorem"></a>2. Laplace Transform - The Theorem</h2><p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/Laplace.png" alt=""></p>
+<p><strong>Integral transform</strong>: In mathematics, an integral transform is any transform $T$ of the following form:<br><span>$$\begin{aligned}
+(Tf)(u)=\int_{t_1}^{t_2}K(t,u)f(t)dt
+\end{aligned}$$</span><!-- Has MathJax --><br>The input of this transform is a function $f$ of the independent variable $t$, and the output is another function $Tf$ of the independent variable $u$. An integral transform is a particular kind of mathematical <a href="https://en.wikipedia.org/wiki/Operator" target="_blank" rel="external"><strong>operator</strong></a>.</p>
+<p>Of course we also need an <strong>inverse transform</strong> to get the function back:<br><span>$$\begin{aligned}
+f(t)=\int_{u_1}^{u_2}K^{-1}(u,t)(Tf)(u)du
+\end{aligned}$$</span><!-- Has MathJax --><br>Actually, this started with J.Fourier. (why always him?)</p>
+<p>If you make $l\to +\infty$, the Fourier series becomes a integral form equation.<br><span>$$\begin{aligned}
+f(t)=\frac{1}{\pi}\int_{0}^{+\infty}d\omega \int_{-\infty}^{\infty}f(u)cos\omega(u-t)du
+\end{aligned}$$</span><!-- Has MathJax --><br>And according to <strong>Euler’s equation</strong>, we get <a href="https://en.wikipedia.org/wiki/Fourier_transform" target="_blank" rel="external"><strong>Fourier transform</strong></a>:<br><span>$$\begin{aligned}
+F(\omega)=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\\
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d\omega
+\end{aligned}$$</span><!-- Has MathJax --><br>However, this transform is not so good to be used:</p>
+<ol>
+<li>As for $f(t)$, we don’t care what happen when $t&lt;0_{-}$.</li>
+<li>As for $\omega$, it is actually the imaginary part of $j\omega$, so what we get from Fourier transform is actually a function of <strong>a pure imaginary variable</strong> but not a function of <strong>a complex variable</strong>, which is what we need in circuit analysis.</li>
+</ol>
+<p>In 1785, <a href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace" target="_blank" rel="external"><strong>P.Laplace</strong></a> got his transform: <a href="https://en.wikipedia.org/wiki/Laplace_transform" target="_blank" rel="external"><strong>Laplace transform</strong></a>. It takes a function of <strong>a positive real variable t (often time)</strong> to a function of <strong>a complex variable s (often frequency)</strong>. Actually this function is some kind of “improved edition” of Fourier transform. It specifically solved the 2 problems above.</p>
+<p><strong>Definition:</strong><br><span>$$\begin{aligned}
+F(s)=\int_{0}^{+\infty}f(t)e^{-st}dt\\
+f(t)=\frac{1}{2 \pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}F(s)e^{st}ds
+\end{aligned}$$</span><!-- Has MathJax --><br>Where:<br><span>$$\begin{aligned}
+s=\sigma+j\omega
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>Well, this time it is good enough… but how can we use it in solving circuit problems?</p>
+<p>Actually, not until more than 100 years later has someone thought of using this Laplace’s method in solving circuit problems. While when someone started using this way to do circuits, he couldn’t proof that it was correct because he simply found this method out of his intuition without knowing that Laplace had proved it for him more than 100 years ago. How pathetic they were!</p>
+<h2 id="3-Laplace-Transform-Heaviside’s-Contributions"><a href="#3-Laplace-Transform-Heaviside’s-Contributions" class="headerlink" title="3. Laplace Transform - Heaviside’s Contributions"></a>3. Laplace Transform - Heaviside’s Contributions</h2><p><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/Heaviside.png" alt=""></p>
+<p><a href="https://en.wikipedia.org/wiki/Oliver_Heaviside#Electromagnetic_terms" target="_blank" rel="external"><strong>Oliver Heaviside</strong></a> (1850-1925) was a <strong>self-taught genius</strong> in electrical engineering who made many important contributions in the field. However, he was best known to engineers for his <strong>operational calculus</strong>, a tool for solving linear differential equations with <strong>constant coefficients</strong>, which he discovered around the turn of the century and which was popularized by <a href="https://en.wikipedia.org/wiki/Charles_Proteus_Steinmetz" target="_blank" rel="external"><strong>Steinmetz</strong></a> in the United States.</p>
+<p>For example, he defined such operators:<br><span>$$\begin{aligned}
+p=\frac{d(*)}{dt}\\
+\frac{1}{p}=\int_{-\infty}^{t}(*)dt
+\end{aligned}$$</span><!-- Has MathJax --><br>In this way, a differential equation like this: $r’’+6r’+5r=e’+3e$ can be written as:<br><span>$$\begin{aligned}
+(p+1)(p+5)r=(p+3)e
+\end{aligned}$$</span><!-- Has MathJax --><br>So integral operations and differential operations become multiplications and divisions. It is much easier.</p>
+<p>The operational calculus was severely limited by its lack of mathematical theory, which not only limited its field of application, but also created many uncertainties and ambiguities. Actually Laplace transform was the mathematical theory Heaviside needed, but it was a mathematical obscurity in his time. Sorry for Mr.Heaviside. :(</p>
+<h2 id="4-Laplace-Transform-Applications"><a href="#4-Laplace-Transform-Applications" class="headerlink" title="4. Laplace Transform - Applications"></a>4. Laplace Transform - Applications</h2><p>From <strong>time domain</strong> to <strong>frequency domain</strong>:</p>
+<h4 id="a-Ohm’s-Law"><a href="#a-Ohm’s-Law" class="headerlink" title="a). Ohm’s Law:"></a>a). Ohm’s Law:</h4><span>$$\begin{aligned}
+U=I\times R \Rightarrow U(s)=I(s)R
+\end{aligned}$$</span><!-- Has MathJax -->
+<h4 id="b-VCRs-of-R-L-and-C"><a href="#b-VCRs-of-R-L-and-C" class="headerlink" title="b). VCRs of R, L and C:"></a>b). VCRs of R, L and C:</h4><ul>
+<li>Resistors:<span>$$\begin{aligned}
+\mathcal{L}\{resistor\}=R=r
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Inductors:<span>$$\begin{aligned}
+&amp;\because u(t)=L\frac{di}{dt}\\
+&amp;\therefore U(s)=sLI(s)-Li(0_{-})\\
+&amp;\therefore \mathcal{L}\{inductor\}=sL
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Capacitors:<span>$$\begin{aligned}
+&amp;\because i(t)=C\frac{du}{dt}\\
+&amp;\therefore u(t)=\frac{1}{C}\int_{t_0}^{+\infty}i(t)dt\\
+&amp;\therefore U(s)=\frac{1}{sC}I(s)+\frac{u(0_{-})}{s}\\
+&amp;\therefore \mathcal{L}\{capacitor\}=\frac{1}{sC}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>It’s worth noting that the transformed form of capacitors and inductors is not only related to C and L but also in relation to <strong>the initial values of voltages or currents</strong>.</li>
+</ul>
+<h4 id="c-Laplace-transform-of-some-important-kinds-of-drive-signals"><a href="#c-Laplace-transform-of-some-important-kinds-of-drive-signals" class="headerlink" title="c). Laplace transform of some important kinds of drive signals:"></a>c). Laplace transform of some important kinds of drive signals:</h4><ul>
+<li>Impulse function (<a href="https://en.wikipedia.org/wiki/Dirac_delta_function" target="_blank" rel="external"><strong>Dirac delta function</strong></a>):<span>$$\begin{aligned}
+&amp; f(t)=\delta(t) \Rightarrow F(s)=1\\
+&amp; f(t)=\delta^{n}(t) \Rightarrow F(s)=s^n
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Unit step function (<a href="https://en.wikipedia.org/wiki/Heaviside_step_function" target="_blank" rel="external"><strong>Heaviside step function</strong></a>):<span>$$\begin{aligned}
+&amp; f(t)=\varepsilon(t) \Rightarrow F(s)=\frac{1}{s}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Some polynomial functions:<span>$$\begin{aligned}
+&amp; f(t)=t \Rightarrow F(s)=\frac{1}{s^2}\\
+&amp; f(t)=t^n , n\in \mathbb{N}_{+} \Rightarrow F(s)=\frac{n!}{s^{n+1}}\\
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Exponential functions and trigonometric functions:<span>$$\begin{aligned}
+&amp; f(t)=e^{-at} \Rightarrow F(s)=\frac{1}{s+a}\\
+&amp; f(t)=t^{n}e^{-at} , n\in \mathbb{N}_{+} \Rightarrow F(s)=\frac{n!}{(s+a)^{n+1}}\\
+&amp; f(t)=sin\omega t \Rightarrow F(s)=\frac{\omega}{s^2+\omega^2}\\
+&amp; f(t)=cos\omega t \Rightarrow F(s)=\frac{s}{s^2+\omega^2}\\
+&amp; f(t)=e^{-at}sin(\omega t+\phi) \Rightarrow F(s)=\frac{(s+a)sin\phi+\omega cos\phi}{(s+a)^2+\omega^2}\\
+&amp; f(t)=e^{-at}cos(\omega t+\phi) \Rightarrow F(s)=\frac{(s+a)cos\phi-\omega sin\phi}{(s+a)^2+\omega^2}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>If you need more, check this out: <a href="http://rapidtables.com/math/calculus/laplace_transform.htm" target="_blank" rel="external"><em>Rapidtables: Laplace Transform</em></a>.</li>
+</ul>
+<h4 id="d-Heaviside-Cover-up-Method"><a href="#d-Heaviside-Cover-up-Method" class="headerlink" title="d). Heaviside Cover-up Method"></a>d). Heaviside Cover-up Method</h4><p>The inverse transform of Laplace transform seems to be too complicated, so O. Heaviside taught us his “empirical” method, actually also some tricks to deal with differential equations just like his “operational calculus”: <a href="https://en.wikipedia.org/wiki/Heaviside_cover-up_method" target="_blank" rel="external">Heaviside cover-up method</a>.</p>
+<h2 id="FINALLY…"><a href="#FINALLY…" class="headerlink" title="FINALLY…"></a>FINALLY…</h2><p>That’s all:</p>
+<ol>
+<li>DC resistive circuits: Ohm’s law, Kirchhoff’s circuit laws, Thévenin’s theorem.</li>
+<li>Periodic AC circuits: Phasor method, Fourier series, superposition theorem.</li>
+<li>ANY circuit: Laplace transform.<br>…<br>I need a nap…<br><img src="/images/2016-01-29-Circuit-Analysis-Pt-3/sleepingcat.png" alt=""></li>
+</ol>
+<p><strong>References:</strong></p>
+<ul>
+<li>Li,Hansun. <em>Basis of Circuit Analysis</em>, 4th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li>Lin,Chunying. <em>Electric Circuits and Magnetic Circuits</em>, 2nd ed. [M]. Beijing: China Electric Power Press, 2014.</li>
+<li>Department of Mathematics, Tongji University, <em>Advanced Mathematics</em>, 6th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li>Song,Suluo. <em>Complex Function and Integral Transform</em>. [M]. Beijing: Science Press, 2013.</li>
+<li>Calvert,James. <em>Heaviside, Laplace and the Inversion Integral</em> [EB/OL]. <a href="http://mysite.du.edu/~jcalvert/math/laplace.htm" target="_blank" rel="external">http://mysite.du.edu/~jcalvert/math/laplace.htm</a>, 2016-01-30.</li>
+<li>Miller,James. <em>Methods of Finding Laplace Transforms and Inverse Transforms, etc.</em> [EB/OL]. <a href="http://www.solitaryroad.com/c913.html" target="_blank" rel="external">http://www.solitaryroad.com/c913.html</a>, 2016-01-31.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-01-31.</li>
+<li><em>Wikibooks</em> [EB/OL]. <a href="https://en.wikibooks.org/wiki/Main_Page" target="_blank" rel="external">https://en.wikibooks.org/wiki/Main_Page</a>, 2016-01-31.</li>
+<li><em>Rapidtables</em> [EB/OL]. <a href="http://rapidtables.com/" target="_blank" rel="external">http://rapidtables.com/</a>, 2016-01-31.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-01-29-Circuit-Analysis-Pt-3/coverpic.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We have already solve simple &lt;strong&gt;DC resistive circuit
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="circuit-analysis" scheme="http://samlyu.github.io/tags/circuit-analysis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Circuit Analysis Pt.2</title>
+    <link href="http://samlyu.github.io/2016/01/28/Circuit-Analysis-Pt-2/"/>
+    <id>http://samlyu.github.io/2016/01/28/Circuit-Analysis-Pt-2/</id>
+    <published>2016-01-27T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/pic1.png" alt=""><br><br><br>Last time in <a href="http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/">Circuit Analysis Pt.1</a> we have got the methods to solve all the problems of <strong>DC resistive circuits</strong>, now we want to know how to solve <strong>All</strong> the circuits problems in some linear methods.</p>
+<p>Apparently the differential equations are not linear, so if we want to make them linear, we have to change the equations into some other “forms”, into some other <strong>“domains”</strong>. We have to do some mathematical tricks.</p>
+<ul>
+<li>Here is an example:</li>
+<li>if we want to solve the following problem:<br>$$x^{2.35}=5$$</li>
+<li>We cannot do it directly, so we take the log of the both sides of the function:<br>$$2.35lg(x)=lg5$$<br>In the “log domain”, the function becomes linear.<br>$$lg(x)=\frac{lg5}{2.35}\approx\frac{0.6989}{2.35}\approx0.2974$$</li>
+<li>And then we check the logarithm table:<br>$$x=lg^{-1}0.2974\approx1.983$$</li>
+<li>That’s the answer.</li>
+</ul>
+<p>Let’s do the same thing <strong>“ELECTRONICALLY”</strong>.<br><br></p>
+<h2 id="1-Phasor-Method"><a href="#1-Phasor-Method" class="headerlink" title="1. Phasor Method"></a>1. Phasor Method</h2><p><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/phasor1.png" alt=""></p>
+<p>First lets assume that our power sources are some <strong>AC sources</strong>.<br>In 1748, <a href="https://en.wikipedia.org/wiki/Leonhard_Euler" target="_blank" rel="external">L.Euler</a> proved the function below:<br>$$e^{i\phi}=cos\phi+isin\phi$$<br>Of course this function has a well-known version: <a href="https://en.wikipedia.org/wiki/Euler%27s_identity" target="_blank" rel="external"><strong>Euler’s Equation</strong></a>:<br>$$e^{i\pi}+1=0$$<br>In 1893, <a href="https://en.wikipedia.org/wiki/Charles_Proteus_Steinmetz" target="_blank" rel="external">C.Steinmetz</a> use this function developed his <strong>AC steady state circuit theory</strong>, he use this function to turn all the sinusoidal quantities into complex numbers: <a href="https://en.wikipedia.org/wiki/Phasor" target="_blank" rel="external"><strong>phase vectors (phasor)</strong></a>. In this way, the VCRs of R, L, C are all linear.</p>
+<p><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/phasor2.png" alt=""></p>
+<p>$$\dot{U_m}=R\dot{I_m}$$<br>$$\dot{U_m}=\frac{1}{j\omega C}\dot{I_m}$$<br>$$\dot{U_m}=j\omega L\dot{I_m}$$<br>Now the R, L, C become the same kind of linear quantity - <a href="https://en.wikipedia.org/wiki/Electrical_impedance" target="_blank" rel="external"><strong>impedance</strong></a>. We can use KVL or KCL or Thevenin’s theorem to solve the problems, just like what we did in the old days. Don’t forget to turn these phasors into sinusoidal quantities in the end, because these phasors actually don’t have any physical meanings.</p>
+<h2 id="2-Voltage-Triangle-and-Power-Triangle"><a href="#2-Voltage-Triangle-and-Power-Triangle" class="headerlink" title="2. Voltage Triangle and Power Triangle"></a>2. Voltage Triangle and Power Triangle</h2><p>Now you may have found that the voltages across R, L, C have different angles. That make the voltages in an AC circuit are shaped into a <strong>“voltage triangle”</strong> in the <strong>complex plane</strong>.<br><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/triangle1.png" alt=""></p>
+<p>And think about the <strong>Power</strong>, the “U”s simply become “P”s, that’s still a triangle: the <strong>power triangle</strong>.</p>
+<p>The real part of $U_{RLC}$ is consist of $U_{R}$, that explains that resistors are the<br>components in the circuits that consume energy. The imaginary part of $U_{RLC}$ is made of $U_{C}$ and $U_{L}$, that explains that capacitors and inductors simply <strong>“charge”</strong> the energy into other forms (electric field and magnetic field) and then they can get the energy back, they don’t really consume energy.</p>
+<p>So we give $P$, $P_{real}$ and $P_{img}$ names: <strong>complex power</strong> ($\dot{S}$), <strong>active power</strong> or <strong>real power</strong> (P), and <strong>wattless power</strong> or <strong>reactive power</strong> (Q). The length of complex power is called <strong>apparent power</strong> (S).</p>
+<p><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/powertriangle.png" alt=""></p>
+<h2 id="3-Resonance"><a href="#3-Resonance" class="headerlink" title="3. Resonance"></a>3. Resonance</h2><p>Another interesting fact you may have found here is that the angles of $U_{L}$ and $U_{C}$ are just the opposite: $90^\circ$ and $-90^\circ$. So what happened if they <strong>offset</strong> each other? Just like there are only resistors in the AC circuit. This is called <a href="https://en.wikipedia.org/wiki/Resonance" target="_blank" rel="external"><strong>resonance</strong></a>.</p>
+<p>This will happen when: $|j\omega L|=|\frac{1}{j\omega C}|$ , so: $\omega_{0}=\frac{1}{\sqrt{LC}}$. This means that resonance just happens when the circuit reaches particular frequency.<br><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/resonance.png" alt=""><br>Here are some other definitions:</p>
+<ul>
+<li>Quality Factor:<span>$$\begin{aligned}
+Q=\frac{\omega_{0} L}{R}=\frac{1}{\omega_{0} RC}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li>Bandwidth:<span>$$\begin{aligned}
+BW=\omega_{high} - \omega_{low}= \frac{R}{L}=\frac{\omega_{0}}{Q}
+\end{aligned}$$</span><!-- Has MathJax -->
+</li>
+</ul>
+<h2 id="4-Maximum-Power-Transfer-Theorem"><a href="#4-Maximum-Power-Transfer-Theorem" class="headerlink" title="4. Maximum Power Transfer Theorem"></a>4. Maximum Power Transfer Theorem</h2><p>We have already solved the same problem in DC circuits by using <strong>Jacobi’s Law</strong>. There are just something slightly different in AC circuits: the impedance has a imaginary part. So let’s just offset this part.<br><span>$$\begin{aligned}
+Z_{L}=Z^{*}_{S}\\
+P_{Lmax}=\frac{U^2_{S}}{4R_{S}}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p><strong>HOWEVER</strong>, if you cannot change the angle of your load, then $Z_{L}=Z_{S}$ is good enough.</p>
+<h2 id="5-Circuits-with-Mutual-Inductance"><a href="#5-Circuits-with-Mutual-Inductance" class="headerlink" title="5. Circuits with Mutual Inductance"></a>5. Circuits with Mutual Inductance</h2><p>Inductors are interesting components. One inductor can deposit the energy into magnetic field and then another one can withdraw the energy: the <a href="https://en.wikipedia.org/wiki/Transformer" target="_blank" rel="external"><strong>transformer</strong></a>. Actually, we can use some calculation to get the equivalent forms of transformers or coupled inductors to turn them into some independent components in the circuits.</p>
+<p><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/inductors.png" alt=""></p>
+<p>VCR of coupled inductors:<br><span>$$\begin{aligned}
+u1=L_{1}\frac{di_1}{dt}+M\frac{di_2}{dt}\\
+u2=L_{2}\frac{di_2}{dt}+M\frac{di_1}{dt}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p>And in phasor form:</p>
+<span>$$\begin{aligned}
+\dot{U_1}=j\omega L_1 \dot{I_1}+j\omega M \dot{I_2}\\
+\dot{U_2}=j\omega L_2 \dot{I_2}+j\omega M \dot{I_1}
+\end{aligned}$$</span><!-- Has MathJax -->
+<p>The two dots in the circuit are <strong>dotted terminals</strong>, they show the direction of currents (actually the twining directions of the wires). If the dotted terminal on one side change, the functions above also change.<br><span>$$\begin{aligned}
+u1=L_{1}\frac{di_1}{dt}-M\frac{di_2}{dt}\\
+u2=L_{2}\frac{di_2}{dt}-M\frac{di_1}{dt}
+\end{aligned}$$</span><!-- Has MathJax --></p>
+<p><strong>Other definitions</strong>:</p>
+<ol>
+<li>Coupling coefficient:<span>$$\begin{aligned}
+M=k\sqrt{L_{1}L_{2}}
+\end{aligned}$$</span><!-- Has MathJax -->
+k is the <strong>coupling coefficient</strong> and 0 ≤ k ≤ 1.<br><br></li>
+<li>T-shaped inductors equivalent transform:<br><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/T%20shape.png" alt=""><br><br></li>
+<li>Reflected impedance:<br><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/reflectedim.png" alt=""><br>Input impedance:<span>$$\begin{aligned}
+Z_{i}=\frac{\dot{U_{s}}}{\dot{I_1}}=Z_{primary coil}+\frac{\omega^2 M^2}{Z_{secondary coil}}
+\end{aligned}$$</span><!-- Has MathJax -->
+$\frac{\omega^2 M^2}{Z_{secondary coil}}$ is called <strong>reflected impedance</strong>.<br><br></li>
+<li>Ideal transformers:<br><img src="/images/2016-01-28-Circuit-Analysis-Pt-2/idealtr.png" alt=""><br>Just the voltages across these two inductors change, so it can be solved normally.<br><br><br><strong>Mmmm, that’s all about the phasor method I’ve learned so far.</strong></li>
+</ol>
+<h2 id="However…"><a href="#However…" class="headerlink" title="However…"></a>However…</h2><p>Phasor can only solve AC circuit problems. Is there a more generally applicable linear method to solve <strong>ALL</strong> the circuit problems??</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Li,Hansun. <em>Basis of Circuit Analysis</em>, 4th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li>Lin,Chunying. <em>Electric Circuits and Magnetic Circuits</em>, 2nd ed. [M]. Beijing: China Electric Power Press, 2014.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-01-28.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-01-28-Circuit-Analysis-Pt-2/pic1.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Last time in &lt;a href=&quot;http://samlyu.github.io/2016/01/24/
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="circuit-analysis" scheme="http://samlyu.github.io/tags/circuit-analysis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Circuit Analysis Pt.1</title>
+    <link href="http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/"/>
+    <id>http://samlyu.github.io/2016/01/24/Circuit-Analysis-Pt-1/</id>
+    <published>2016-01-23T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/series_circuit.jpg" alt=""><br><br><br><strong>Circuit analysis</strong> is the process of finding the <strong>voltages</strong> across, and the <strong>currents</strong> through, of every component in the network, for voltages and currents are the basic values of components. Once you got the U (Voltage) and I (current) of a component, it’s easy for you to know how the component works. There are many different techniques for calculating these values. However, for the most part, the applied technique assumes that the components of the network are all <strong>linear</strong>. Not like something inside <em>the electromagnetic field</em> whose U-I relational expression is a function with space and time as variables, components in a linear circuit network is much more lumped and abstract.</p>
+<p>The foundation of circuit analysis is basically built by 3 people, in the 19th century.<br><br><br><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/scientists.jpg" alt=""></p>
+<h2 id="1-Ohm’s-Law"><a href="#1-Ohm’s-Law" class="headerlink" title="1. Ohm’s Law"></a>1. Ohm’s Law</h2><p>$$U={R}\times{I}$$<br>Actually in 1781 <strong>Henry Cavendish</strong> discovered the above law first but he was unwilling to share it with people, so after Ohm published his result of his work on resistance in 1827, this law was named after him but not the real first discoverer.</p>
+<p>In my opinion, the Ohm’s Law shows a character of common materials: They “resist” the current running through them. In other words, <strong>alomst everything can consume energy, and the ways they consume energy have to obey this rule.</strong></p>
+<p>And this law is exactly the foundation of everything in linear circuit analysis.</p>
+<ul>
+<li>By the way, we have to be aware of the <strong>reference directions</strong> in the circuits. If in your circuit, you assume that the voltage across a component is in the opposite direction with the current running through it, the Ohm’s law should be written as:<br>$$U=-{R}\times{I}$$</li>
+</ul>
+<h2 id="2-Kirchhoff’s-circuit-laws"><a href="#2-Kirchhoff’s-circuit-laws" class="headerlink" title="2. Kirchhoff’s circuit laws"></a>2. Kirchhoff’s circuit laws</h2><ol>
+<li>KCL: The algebraic sum of currents in a network of conductors meeting at a point is zero.<br>$$\sum_{k=1}^n I_k=0$$</li>
+<li>KVL: The algebraic sum of the products of the resistances of the conductors and the currents in them in a closed loop is equal to the total emf available in that loop.<br>$$\sum_{k=1}^n U_k=0$$</li>
+</ol>
+<p><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/nodeandloop.png" alt=""></p>
+<p>These laws are actually another ways to express the spirit of the conservation of matter and energy. Using these 2 laws we are capable of solving some more complex circuit problems but not just the basic series circuit or parallel circuit problems. On the basis of these 2 laws, we have the methods of <a href="https://en.wikipedia.org/wiki/Nodal_analysis" target="_blank" rel="external"><strong>nodal analysis</strong></a> and <a href="https://en.wikipedia.org/wiki/Mesh_analysis" target="_blank" rel="external"><strong>mesh analysis</strong></a>. Now we can solve every problem of a DC circuit with <strong>resistors</strong> and <a href="https://en.wikipedia.org/wiki/Dependent_source" target="_blank" rel="external"><strong>dependent source</strong></a> in it.</p>
+<ul>
+<li><strong>BY THE WAY</strong>, sometimes we may find some odd parts in a circuit like these:<br><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/dytransform.png" alt=""></li>
+<li>In this case, we have to simplify the circuit by doing the <a href="https://en.wikipedia.org/wiki/Y-%CE%94_transform" target="_blank" rel="external"><strong>Y-Δ transform</strong></a>.<span>$$\begin{aligned}
+R_y=\frac{R&apos;R&apos;&apos;}{\sum{R_{\Delta}}}
+\end{aligned}$$</span><!-- Has MathJax -->
+<span>$$\begin{aligned}
+R_\Delta=\frac{R_1R_2+R_2R_3+R_3R_1}{R_{opposite}}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+</ul>
+<h2 id="3-Thevenin’s-theorem"><a href="#3-Thevenin’s-theorem" class="headerlink" title="3.  Thévenin’s theorem"></a>3.  Thévenin’s theorem</h2><p>As originally stated in terms of DC resistive circuits only, Thévenin’s theorem holds that:</p>
+<ul>
+<li>Any linear electrical network with voltage and current sources and only resistances can be replaced at terminals A-B by <em>an equivalent voltage source in series connection with an equivalent resistance</em>.</li>
+<li>This equivalent voltage $U_{oc}$ is the voltage obtained at terminals A-B of the network with terminals A-B <em>open circuited</em>.</li>
+<li>This equivalent resistance $R_{th}$ is the resistance obtained at terminals A-B of the network with <em>all its independent current sources open circuited</em> and <em>all its independent voltage sources short circuited</em>.</li>
+</ul>
+<p><img src="/images/2016-01-24-Circuit-Analysis-Pt-1/blackboxtovandr.png" alt=""></p>
+<p>Now we can not only solve complex linear circuit analysis problems, but also transform the complex circuits into their simplified “Thevenin” equivalent forms.</p>
+<ul>
+<li><strong>BY THE WAY</strong>, let’s think about how much power we can get from the circuits and how to get the maximum power.</li>
+<li>Around 1840, <a href="https://en.wikipedia.org/wiki/Moritz_von_Jacobi" target="_blank" rel="external"><strong>Moritz von Jacobi</strong></a> published the maximum power (transfer) theorem: the <strong>“Jacobi’s law”</strong>.</li>
+<li>to obtain maximum external power from a source with a finite internal resistance, the resistance of the load must <em>equal the resistance of the source as viewed from its output terminals</em>. So here we get:<span>$$\begin{aligned}
+R_{L}=R_{th}\\
+P_{max}=\frac{u^{2}_{oc}}{4R_{th}}
+\end{aligned}$$</span><!-- Has MathJax --></li>
+<li><strong>MEANWHILE</strong>, sometimes we may find some strange but useful components in our circuits, their U/I are not determined by their own I/U but the I/U of other components. They are <a href="https://en.wikipedia.org/wiki/Dependent_source" target="_blank" rel="external"><strong>dependent sources</strong></a>: VCVS, VCCS, CCVS, CCCS. They are very useful if we want to control the U/I of our target components.</li>
+</ul>
+<h2 id="However…"><a href="#However…" class="headerlink" title="However…"></a>However…</h2><p>Resistance is only one of the 3 basic characters of materials. The other 2 characters are <strong>capacitance (C)</strong> and <strong>inductance (L)</strong>. If we take them into consideration, the U-I relational expressions we get are:<br>$$i(t)=C\frac{du}{dt}$$<br>and<br>$$u(t)=L\frac{di}{dt}$$</p>
+<ul>
+<li>It’s worth noting that: because of the conservation of matter and energy, the voltage across a capacitor $u_C(t)$ and the current inside a inductor $i_L(t)$ cannot change instantly but can only be changed gradually and continuously. They are the <a href="https://en.wikipedia.org/wiki/State_variable" target="_blank" rel="external"><strong>state variables</strong></a> of the circuit.</li>
+</ul>
+<p>Apparently, these equations are no longer linear. If there is only 1 capacitor or inductor in a DC circuit ( <a href="https://en.wikipedia.org/wiki/RC_circuit" target="_blank" rel="external">RC circuit</a> or <a href="https://en.wikipedia.org/wiki/LC_circuit" target="_blank" rel="external">LC circuit</a> ), we can use differential equations to solve them.</p>
+<p>For example:</p>
+<ul>
+<li>$y(t)$ means a voltage or current in a circuit.</li>
+<li>$y(0_+)$ means the initial value.</li>
+<li>$y(\infty)$ means the stable value.</li>
+<li>$\tau$ is the <a href="https://en.wikipedia.org/wiki/Time_constant" target="_blank" rel="external"><strong>time constant</strong></a> of the circuit. ( $\tau=RC$ or $\tau=\frac{L}{R}$ )</li>
+</ul>
+<p>The point is: we must figure out the 3 elements: $y(0_+)$, $y(\infty)$ and $\tau$, so that we can solve the circuit.</p>
+<p>$$y(t)=y(\infty)+[y(0_+)-y(\infty)]e^{-\frac{t}{\tau}}$$</p>
+<p>MISSION ACCOMPLISHED.</p>
+<h2 id="However…-1"><a href="#However…-1" class="headerlink" title="However…"></a>However…</h2><p>If there are many capacitors and inductors in a circuit, or the source of the circuit is not DC, it will be very exhausting to deal with it by solving differential equations. How can we solve it in some linear methods??</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Li,Hansun. <em>Basis of Circuit Analysis</em>, 4th ed. [M]. Beijing: Higher Education Press, 2007.</li>
+<li><em>Wikipedia</em> [EB/OL]. <a href="https://en.wikipedia.org" target="_blank" rel="external">https://en.wikipedia.org</a>, 2016-01-24.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016-01-24-Circuit-Analysis-Pt-1/series_circuit.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Circuit analysis&lt;/strong&gt; is the proces
+    
+    </summary>
+    
+      <category term="EECS" scheme="http://samlyu.github.io/categories/EECS/"/>
+    
+      <category term="Theories" scheme="http://samlyu.github.io/categories/EECS/Theories/"/>
+    
+    
+      <category term="circuit-analysis" scheme="http://samlyu.github.io/tags/circuit-analysis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction</title>
+    <link href="http://samlyu.github.io/2016/01/23/Introduction/"/>
+    <id>http://samlyu.github.io/2016/01/23/Introduction/</id>
+    <published>2016-01-22T16:00:00.000Z</published>
+    <updated>2016-08-03T05:19:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="5">— to me &amp;&amp; my blog.</font><br><br><br><img src="/images/2016-01-23-Introduction/StarryNight1.jpg" alt=""></p>
+<p><font size="4"><strong>I am the owner of this blog, S. Lyu is my name.</strong></font><br><br><br>Right at this moment (Jan, 2016), I am:</p>
+<ul>
+<li>A sophomore student. Enrolled in a low-ranked college in suburban Beijing in 2014, after I graduated from a top high school in China and then screwed up the College Entrance Examination.</li>
+<li>An undergraduate major in electronic engineering. 「circuit-analysis」,「Analog」,「Digital」,「MSP430」… words like these will appear in my posts as tags later.</li>
+<li>A music lover. I have played piano for the high school chorus and also served as the bassist for our rock band “Groceries”. I would like to share my interest and newly acquired skills with you here.</li>
+</ul>
+<p>As for me, this blog is:</p>
+<ul>
+<li>A platform to share knowledge and values. Of course this is what a web log should be.</li>
+<li>An outlet to speak out my feelings. My surrounding people are quite disparate from those who I used to study with. Most of them are quite kindhearted and easygoing while they have a much lower career expectation. I simply want to do something more for my individual development.</li>
+</ul>
+<p>Building a blog can be really easy if you choose to use weebly, blogger or some other blog builders, but I choose to build this blog with <a href="https://pages.github.com/" target="_blank" rel="external"><strong>Github pages</strong></a> and <a href="http://hexo.io/" target="_blank" rel="external"><strong>hexo</strong></a> because it really looks cool to have my own domain and I am free to set my site whatever I like it to be. Also, my friend <a href="https://github.com/cPolaris" target="_blank" rel="external"><strong>Polaris Chen</strong></a>‘s site (built with Github pages and jekyll) was a motivator for me to build my own site in this way.</p>
+<p>In a word, I hope you enjoy reading my posts !</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>Chen,Sufeng. <em>How to Build a Blog</em> [EB/OL].<br><a href="http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/" target="_blank" rel="external">http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/</a>, 2014-05-10.</li>
+<li>Zippera. <em>Hexo</em> [EB/OL].<br><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">http://zipperary.com/categories/hexo/</a>, 2015-01-16.</li>
+<li>Clark,Barry. <em>Build a Blog with Jekyll and GitHub Pages</em> [EB/OL].<br><a href="https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/" target="_blank" rel="external">https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/</a>, 2014-08-01.</li>
+<li>Zhang,Ruipeng. <em>Hexo-theme-hueman</em> [EB/OL].<br><a href="https://github.com/ppoffice/hexo-theme-hueman#swiftype" target="_blank" rel="external">https://github.com/ppoffice/hexo-theme-hueman#swiftype</a></li>
+<li>Lu,Kang. <em>Mathjax for Hexo</em> [EB/OL].<br><a href="http://lukang.me/2014/mathjax-for-hexo.html" target="_blank" rel="external">http://lukang.me/2014/mathjax-for-hexo.html</a>, 2014-09-21.</li>
+<li>Pan,Baixin. <em>Hexo+Github: Build Your Own Blog</em> [EB/OL].<br><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a>, 2016-07-08.</li>
+<li>Schrodinger’s Dead Cat. <em>Building a Blog Which Supports LaTeX</em> [EB/OL].<br><a href="http://blog.csdn.net/emptyset110/article/details/50123231" target="_blank" rel="external">http://blog.csdn.net/emptyset110/article/details/50123231</a>, 2015-12-01.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;5&quot;&gt;— to me &amp;amp;&amp;amp; my blog.&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;/images/2016-01-23-Introduction/StarryNight1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;
+    
+    </summary>
+    
+      <category term="About" scheme="http://samlyu.github.io/categories/About/"/>
+    
+    
+      <category term="miscellaneous" scheme="http://samlyu.github.io/tags/miscellaneous/"/>
+    
+  </entry>
+  
+</feed>
